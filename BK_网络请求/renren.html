@@ -1,0 +1,2135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="nx-main980">
+<head><meta charset="utf-8"/>
+<link rel="shortcut icon" type="image/x-icon" href="http://a.xnimg.cn/favicon-rr.ico?ver=3" />
+<link rel="apple-touch-icon" href="http://a.xnimg.cn/wap/apple_icon_.png" />
+<link rel="stylesheet" type="text/css" href="http://s.xnimg.cn/a78209/nx/core/base.css">
+<script type="text/javascript">
+if(typeof nx === 'undefined'){
+var nx = {};
+}
+nx.log = {
+startTime : + new Date()
+};
+nx.user = {
+id : "",
+ruid:"",
+tinyPic	: " ",
+name : "",
+requestToken : '',
+_rtk : 'b08da1d7'
+};nx.user.isvip = false;nx.user.hidead = false;nx.webpager = nx.webpager || {};
+nx.production = true;
+</script>
+<script type="text/javascript" src="http://s.xnimg.cn/a77347/nx/core/libs.js"></script>
+<script type="text/javascript">
+define.config({map:{
+"backbone":"http://s.xnimg.cn/a75208/nx/core/backbone.js",
+"ui/draggable":"http://s.xnimg.cn/a70750/nx/core/ui/draggable.js",
+"ui/menu":"http://s.xnimg.cn/a70736/nx/core/ui/menu.js",
+"ui/resizable":"http://s.xnimg.cn/a70738/nx/core/ui/resizable.js",
+"ui/sortable":"http://s.xnimg.cn/a70749/nx/core/ui/sortable.js",
+"ui/tabs":"http://s.xnimg.cn/a78333/nx/core/ui/tabs.js",
+"ui/ceiling":"http://s.xnimg.cn/a76297/nx/core/ui/ceiling.js",
+"ui/columns":"http://s.xnimg.cn/a68070/nx/core/ui/columns.js",
+"ui/dialog":"http://s.xnimg.cn/a76395/nx/core/ui/dialog.js",
+"ui/fileupload":"http://s.xnimg.cn/a77333/nx/core/ui/fileupload.js",
+"ui/pagination":"http://s.xnimg.cn/a70307/nx/core/ui/pagination.js",
+"ui/placeholder":"http://s.xnimg.cn/a72095/nx/core/ui/placeholder.js",
+"ui/progressbar":"http://s.xnimg.cn/a62964/nx/core/ui/progressbar.js",
+"ui/rows":"http://s.xnimg.cn/a62964/nx/core/ui/rows.js",
+"ui/scroll":"http://s.xnimg.cn/a61518/nx/core/ui/scroll.js",
+"ui/scrollbar":"http://s.xnimg.cn/a76868/nx/core/ui/scrollbar.js",
+"ui/select":"http://s.xnimg.cn/a77883/nx/core/ui/select.js",
+"ui/slideshow":"http://s.xnimg.cn/a72804/nx/core/ui/slideshow.js",
+"ui/speech":"http://s.xnimg.cn/a77631/nx/core/ui/speech.js",
+"ui/textbox":"http://s.xnimg.cn/a78128/nx/core/ui/textbox.js",
+"ui/renren/textbox":"http://s.xnimg.cn/a78123/nx/core/ui/renren/textbox.js",
+"ui/tooltip":"http://s.xnimg.cn/a73228/nx/core/ui/tooltip.js",
+"ui/renren/addfriend":"http://s.xnimg.cn/a77718/nx/core/ui/renren/addFriendLayer.js",
+"ui/renren/at":"http://s.xnimg.cn/a76982/nx/core/ui/renren/at.js",
+"ui/renren/commentCenter":"http://s.xnimg.cn/a73625/nx/core/ui/renren/commentCenter.js",
+"ui/renren/emotion":"http://s.xnimg.cn/a77697/nx/core/ui/renren/emotion.js",
+"ui/renren/friendgroup":"http://s.xnimg.cn/a62964/nx/core/ui/renren/friendGroup.js",
+"ui/renren/friendListSelector":"http://s.xnimg.cn/a71270/nx/core/ui/renren/friendListSelector.js",
+"ui/renren/like":"http://s.xnimg.cn/a73625/nx/core/ui/renren/like.js",
+"nx/namecard":"http://s.xnimg.cn/a77668/nx/core/ui/renren/namecard.js",
+"ui/renren/pagelayer":"http://s.xnimg.cn/a62964/nx/core/ui/renren/pageLayer.js",
+"ui/renren/photoupload":"http://s.xnimg.cn/a77883/nx/core/ui/renren/photoupload.js",
+"ui/renren/privacy":"http://s.xnimg.cn/a76680/nx/core/ui/renren/privacy.js",
+"ui/renren/share":"http://s.xnimg.cn/a77405/nx/core/ui/renren/share.js",
+"ui/renren/vocal":"http://s.xnimg.cn/a77347/nx/core/ui/renren/vocal.js",
+"ui/renren/mvideo":"http://s.xnimg.cn/a77347/nx/core/ui/renren/mvideo.js",
+"ui/renren/with":"http://s.xnimg.cn/a77227/nx/core/ui/renren/with.js",
+"ui/clipboard":"http://s.xnimg.cn/a63417/nx/core/ui/clipboard.js",
+"app/publisher":"http://s.xnimg.cn/a78128/nx/core/app/publisher.js",
+"viewer":"http://s.xnimg.cn/a78295/nx/photo/viewer/js/viewer.js",
+"media/player": "http://s.xnimg.cn/nx/photo/viewer/js/mediaplayer.js",
+"ui/renren/like/commentseed":"http://s.xnimg.cn/a64636/nx/core/ui/renren/like.seed.comment.js",
+"ui/renren/like/seed":"http://s.xnimg.cn/a62964/nx/core/ui/renren/like.seed.js",
+"ui/renren/share/seed":"http://s.xnimg.cn/a62964/nx/core/ui/renren/share.seed.js",
+"ui/renren/follow":"http://s.xnimg.cn/a73911/nx/core/ui/renren/follow.js",
+"ui/renren/relationFollow":"http://s.xnimg.cn/a77724/nx/core/ui/renren/relationFollow.js",
+"ui/autocomplete":"http://s.xnimg.cn/a70736/nx/core/ui/autocomplete.js",
+"ui/showCommonFriend":"http://s.xnimg.cn/a63984/nx/core/ui/renren/showcommonfriend.js",
+"photo/circler":"http://s.xnimg.cn/a73344/nx/photo/phototerminal/js/circler.js",
+"ui/friendSearch":"http://s.xnimg.cn/a64338/nx/core/ui/renren/friendSearch.js",
+"ui/renren/replyOption":"http://s.xnimg.cn/a68256/nx/core/ui/renren/replyOption.js",
+"photo/avatarUpload": "http://s.xnimg.cn/a77340/nx/photo/upload-avata/js/avatarUpload.js"
+}});
+nx.data.isDoubleFeed = Boolean();
+nx.data.isDoubleFeedGuide = Boolean();
+</script>
+<script type="text/javascript" src="http://s.xnimg.cn/a77913/nx/core/base.js"></script>
+<!--[if lt IE 9]>
+<script type="text/javascript">
+document.execCommand("BackgroundImageCache", false, true);
+</script>
+<![endif]-->
+<script>
+nx.webpager.disable = true;</script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<link href="http://s.xnimg.cn/a33155/csspro/base/layout.css" rel="stylesheet" type="text/css" media="all" />
+<link href="http://s.xnimg.cn/favicon.ico?ver=2" rel="shortcut icon" type="image/x-icon" />
+<link href="http://s.xnimg.cn/renren_logo_apple.png" rel="apple-touch-icon" />
+<link href="http://s.xnimg.cn/a72965/n/core/global2-all-min.css" rel="stylesheet" />
+<script type="text/javascript">
+XN = {get_check:'',get_check_x:'b08da1d7',env:{domain:'renren.com',shortSiteName:'人人',siteName:'人人网'}};
+</script>
+<!--[if lte IE 7]><script type="text/javascript" src="http://s.xnimg.cn/a51836/n/core/expressions.js"></script><![endif]-->
+<script type="text/javascript" src="http://s.xnimg.cn/a72842/n/core/base-all2.js"></script>
+<script type="text/javascript">
+XN.getFileVersion(
+[
+'http://s.xnimg.cn/a19816/csspro/apps/profile.css',
+'http://s.xnimg.cn/a20457/jspro/xn.app.recommendFriend.js',
+'http://s.xnimg.cn/a58863/jspro/xn.ui.pager.js',
+'http://s.xnimg.cn/a32035/jspro/xn.ui.multiFriendSelectorBox.js',
+'http://s.xnimg.cn/a54265/csspro/module/friendSelector.css',
+'http://s.xnimg.cn/a36164/jspro/xn.app.webpager.js',
+'http://s.xnimg.cn/a13200/jspro/album/ZeroClipboard.js',
+'http://s.xnimg.cn/a54532/jspro/editor/tiny_mce.js'
+]);    
+</script>
+<!--[if IE 6]><link type="text/css" rel="stylesheet" href="http://s.xnimg.cn/a30950/n/core/webpager-ie6-min.css" /><style id="CSSID_9f2766a4"></style><![endif]-->
+<!--[if IE 7]><link type="text/css" rel="stylesheet" href="http://s.xnimg.cn/a30950/n/core/webpager-ie7-min.css" /></style><![endif]-->
+<!--[if gt IE 7]><!--><link type="text/css" rel="stylesheet" href="http://s.xnimg.cn/a30950/n/core/webpager-std-min.css"><!--<![endif]--><meta name="keywords" content="董成鹏,公共主页,主持人,人人网,人人,renren,校内,xiaonei,主页,page,交友,新鲜事" /><script type="text/javascript">
+XN.getFileVersion(
+[
+'http://s.xnimg.cn/a69051/jspro/xn.app.share.js',
+'http://s.xnimg.cn/a77704/allunivlist.js',
+'http://s.xnimg.cn/a30850/csspro/apps/like.css'
+]);
+XN.user.encryId = '0';</script>
+<script type="text/javascript" src="http://s.xnimg.cn/a66784/jspro/page/managetab.js"></script><script type="text/javascript">
+var defaultVal = '写点什么来支持董成鹏吧...'.replace(/&#39;/g, "'").replace(/&#34;/g, '"'), isClub = false, pid = 601040444, isAdmin=false, biztype = 'index', ref = '';
+XN.namespace('page');
+XN.page.data = {gpid:'',name:"董成鹏",userid:"",sex:"",born:"",isShowRecommend:false,ss:'',rt:'',showPageSendMsg:false,showFansSendMsg:false,id:601040444, type:1, productName:'公共主页', memberName:'好友', isAdmin:false, tabName:'index', defaultVal:'写点什么来支持董成鹏吧...'.replace(/&#39;/g, "'").replace(/&#34;/g, '"'), curAdmin:''};
+//for chewen
+XN.config.jumpOut = false;
+//用以判断切换引导弹层
+XN.namespace('pageSwitchGuide');
+XN.pageSwitchGuide.status = 0;</script><script type="text/javascript" src="http://s.xnimg.cn/a9673/n/lib/swfupload-2.2.0.1/swfupload.js"></script><script type="text/javascript" src="http://s.xnimg.cn/a30849/jspro/xn.like.js"></script>
+<script type="text/javascript" src="http://s.xnimg.cn/a66634/jspro/page/switchpage/page-guide.js"></script><script>var page_info_key = '';</script><!--[if lte IE 6]><style type="text/css" media="screen">/* <![CDATA[ */ @import url(http://s.xnimg.cn/a5273/csspro/patch/ie6.css); /* ]]> */</style><![endif]-->
+<!--[if gte IE 7]><style type="text/css" media="screen">/* <![CDATA[ */ @import url(http://s.xnimg.cn/a5273/csspro/patch/ie7.css); /* ]]> */</style><![endif]--><meta name="description" content="董成鹏，这里是 董成鹏 在人人网的公共主页。来人人网支持董成鹏吧！中国网络第一主持人、北派脱口秀第一人、音乐人——主持人 董成鹏 人人网校内" /><link href="http://s.xnimg.cn/a67823/csspro/page/page.css" rel="stylesheet" type="text/css" media="all" /><link href="http://s.xnimg.cn/a61362/csspro/page/nav-vip.css" rel="stylesheet" type="text/css" media="all" /><script type="text/javascript">
+<!--
+//用户数据		
+XN.namespace( 'user' );XN.user={id:'',tinyPic:'',name:''};//-->
+</script>
+<link href="http://s.xnimg.cn/a69111/n/core/feed/feed-all-min.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="http://s.xnimg.cn/a63482/jspro/xn.app.status.js"></script>
+<script type="text/javascript" src="http://s.xnimg.cn/a64158/jspro/xn.app.ilike.js"></script>
+<script type="text/javascript" src="http://s.xnimg.cn/a68933/n/core/js/minifeed-all.js"></script>
+<script type="text/javascript" src="http://s.xnimg.cn/a69051/jspro/xn.app.share.js"></script>
+<script type="text/javascript" src="http://s.xnimg.cn/a67387/n/apps/status/module/vocal/player.js"></script>
+<script type="text/javascript" src="http://s.xnimg.cn/a55746/n/apps/page/js/components/cryption.js"></script>
+<script type="text/javascript" src="http://s.xnimg.cn/a67733/jspro/page/home.js"></script>
+
+<link href="http://page.renren.com/skin/mng/showStyle?pid=601040444&amp;sid=-1" rel="stylesheet" type="text/css" id="themeLink"/><title>董成鹏的公共主页 - 人人网,renren.com,董成鹏,主持人,公共主页</title></head>
+<body class="public-page layout-2-5-2">
+<div id="nxContainer" class="nx-container">	
+<div class="nx-main">			<div id="nxHeader" class="hd-wraper "><div class="hd-fixed-wraper clearfix" style="width: 1663px;"><div class="hd-main"><h1 class="hd-logo"><a href="http://www.renren.com/" title="人人网 renren.com - 人人网校内是一个真实的社交网络，联系朋友，一起玩游戏">人人网</a></h1><div class="hd-nav clearfix"></div></div></div></div>									
+<div class="nx-wraper clearfix"><div class="bd-container "  style="background:#ffffff"><script type="text/javascript">
+(function(){
+define(function(require,exports){	
+var responseFrame = require('responseFrame');
+responseFrame.initFrameSize();							
+});
+})();
+</script>
+<div class="bd-main" style="padding-top:0">
+<div class="bd-content clearfix" style="width:100%;padding:0"> <div id="container-for-buddylist"><div id="opi" class="page-wrapper clearfix" aaa=""><div class="col-full">
+<div class="page-status" style="position:relative">
+<a name="nohead" >&nbsp;</a>
+<h1 class="page-name">
+<a href="/601040444">董成鹏</a>
+<a href="http://page.renren.com/601040444/identify/desc/official" id="a-identify"><img src="http://a.xnimg.cn/imgpro/page/icon/official-2.png" title="人人网官方认证" alt="人人网官方认证" /></a></h1>
+<span id="joinFansBtn"><a class="follow" href="javascript:;" onclick="loginDialog();"></a></span>	<span class="status-content">
+大鹏剧场秀第二季马上登场，12月19、20、21繁星戏剧村晚上19:30 准时开脱</span>
+<span class="time">2011-12-06</span>
+</div><link rel="stylesheet" type="text/css" href="http://s.xnimg.cn/a50894/n/apps/page/css/switch-new-all-min.css" media="all" />
+<script type="text/javascript" data-src="http://s.xnimg.cn/n/apps/page/js/common/tpl.js" data-module="tpl"></script>
+<script type="text/javascript" src="http://s.xnimg.cn/n/apps/page/js/common/tool.js"></script>
+<script type="text/javascript" src="http://s.xnimg.cn/a54655/n/apps/page/js/admin/admin_switch.js"></script>
+<div id="gift_pop" style="display: none">
+<script>
+function sendPop(args){
+if(typeof args != "undefined" && isNumber(args)){
+pageid = args ;
+} else {
+pageid = 0;
+}
+new Ajax.Request("http://gift.renren.com/op/pagesend/pop", 
+{
+method: "post",
+parameters: "pageid=" + pageid,
+onSuccess: function(o){
+$('gift_pop').innerHTML=o.responseText;
+$('gift_pop').eval_inner_JS();
+}
+}
+); 
+}
+</script>
+</div><div class="setup" style="z-index:1;"><a href="http://page.renren.com?ref=tablink" class="customSetting" style="right:0px;top:1px;margin-top:7px;margin-right:5px;">全部人人公共主页</a></div><div id="customMenuPanel" style="display:none;"><div class="menu-dropdown edit-tab" id="menuHidden">		                
+<a  biz="pagegift" name="收礼盒" href="/601040444/pagegift" title="董成鹏的收礼盒">
+收礼盒</a>		                
+<a  biz="renrenevent" name="活动" href="/601040444/renrenevent" title="董成鹏的活动">
+活动</a></div></div>
+<div class="page-tabs">
+<ul id="navTabPanel" class="tabpanel clearfix">
+<li><a  class="current" biz="index" name="公共主页" href="/601040444/index" title="董成鹏的公共主页">
+公共主页
+</a></li>
+<li>		                
+<a  biz="info" name="资料" href="/601040444/info" title="董成鹏的资料">
+资料</a></li>
+<li>		                
+<a  biz="fdoing" name="状态" href="/601040444/fdoing" title="董成鹏的状态">
+状态</a></li>
+<li>		                
+<a  biz="photo" name="相册" href="/601040444/photo" title="董成鹏的相册">
+相册</a></li>
+<li>		                
+<a  biz="note" name="日志" href="/601040444/note" title="董成鹏的日志">
+日志</a></li>
+<li>		                
+<a  biz="share" name="分享" href="/601040444/share" title="董成鹏的分享">
+分享</a></li>
+<li class="moreTab"><a href="#nogo" class="menu"><img src="http://a.xnimg.cn/a.gif"></a></li></ul>
+</div></div><div class="cols clearfix"><div class="col-left">
+<script type="text/javascript">
+XN.page.data.shareData = {"largeurl":"","summary":"\u4e2d\u56fd\u7f51\u7edc\u7b2c\u4e00\u4e3b\u6301\u4eba\u3001\u5317\u6d3e\u8131\u53e3\u79c0\u7b2c\u4e00\u4eba\u3001\u97f3\u4e50\u4eba","fromuniv":"","title":"\u8463\u6210\u9e4f","level":"1","link":"http:\/\/page.renren.com\/601040444","fromname":"\u8463\u6210\u9e4f","statID":"page_601040444_1","pic":"http:\/\/hdn.xnimg.cn\/photos\/hdn521\/20111117\/1105\/h_head_qdMA_20a30007443a2f75.jpg","type":17,"fromno":601040444,"albumid":"0"};
+</script>
+<div class="mod act-des">
+<div class="mod-header">
+<h4>头像和描述</h4>
+</div>
+<div class="mod action">
+<div class="mod-body clearfix">
+<div class="page-avatar">
+<a href="/601040444/album?head">
+<img src="http://hdn.xnimg.cn/photos/hdn521/20111117/1105/h_main_i23k_20a30007443a2f75.jpg" width="200" alt="董成鹏 主持人" title="董成鹏 主持人" />
+</a>
+</div>
+<div class="pd-holder">
+<ul class="user-action">
+<li class="buttons">
+<a href="javascript:;" onclick="loginDialog();" class="addfrd" >加为好友</a>
+<a href="javascript:;" onclick="loginDialog();"  class="pshare" >分享</a>
+</li>	             </ul>
+<div class="page-des">
+<div class="mod-body">
+<p id="description" >中国网络第一主持人、北派脱口秀第一人、音乐人</p></div>
+</div></div>
+</div>
+</div></div>
+
+<div class="mod basic-info">
+<div class="mod-header">
+<h4>董成鹏的基本信息</h4>
+</div>
+<div class="mod-body">
+<ul>
+<li><span class="label">生日：</span><span class="value"> 1982   - 1   - 12 </span></li>  
+<li><span class="label">星座：</span><span class="value">摩 羯 座</span></li></ul>
+</div>
+</div>
+
+
+
+<div class="mod blogs">
+<div class="mod-header">
+<a class="more" href="/601040444/note" title="查看全部董成鹏的日志">查看全部<img src="http://a.xnimg.cn/imgpro/bg/page-more.png" alt="董成鹏的日志" title="董成鹏的日志"/></a>
+<h4>日志</h4>
+<a href="/601040444/note" rel="nofollow">(1)</a>
+</div>
+<div class="mod-body"><ul class="blogs-list">
+<li>
+<h4>
+<img src="http://a.xnimg.cn/a.gif" class="iBlog"/>
+<a href="/601040444/note/787750880" title="2011年12月19 20 21  晚19:30 繁星戏剧村，大鹏准时开“脱”">2011年12月19 20 21  晚19:30 繁星戏剧村，大鹏准时开“脱”</a>
+</h4>
+
+<p>大鹏剧场秀第二季：《我们船上见》，将在繁星戏剧村连演三场，这对于脱口秀界无疑是一剂猛药，更是对海派清口周立波的公然叫板。...</p>
+<span class="time">
+2011年12月07日 
+<a href="/601040444/note/787750880">评论</a> (0)
+</span>
+</li></ul>
+</div>
+</div>
+
+<div class="mod shares">
+<div class="mod-header">
+<a href="/601040444/share" class="more" title="查看全部董成鹏的分享">查看全部<img src="http://a.xnimg.cn/imgpro/bg/page-more.png" alt="董成鹏的分享" title="董成鹏的分享"/></a>
+<h4>分享</h4>
+<a href="/601040444/share" rel="nofollow">(8)</a>
+</div>
+<div class="mod-body"><ul class="shares-list">
+<li>
+<img class="icon iVideo" src="http://a.xnimg.cn/a.gif"/>
+<a href="/share/list?pid=601040444&share_id=11800958058#11800958058">
+《你的单车》：搞笑日本人武汉丢车   </a>
+<span class="time"></span>
+</li>
+<li>
+<img class="icon iVideo" src="http://a.xnimg.cn/a.gif"/>
+<a href="/share/list?pid=601040444&share_id=11766249562#11766249562">
+刘俐俐面试《大鹏嘚吧嘚》 双语主持秒杀张绍刚</a>
+<span class="time"></span>
+</li>
+<li>
+<img class="icon iBlog" src="http://a.xnimg.cn/a.gif"/>
+<a href="/share/list?pid=601040444&share_id=10481475381#10481475381">
+2011年12月19 20 21  晚19:30 繁星戏剧村，大鹏准时开“脱”</a>
+<span class="time"></span>
+</li>
+<li>
+<img class="icon iVideo" src="http://a.xnimg.cn/a.gif"/>
+<a href="/share/list?pid=601040444&share_id=10338477529#10338477529">
+大鹏讲道德：消费生命沉迷《魔兽》   </a>
+<span class="time"></span>
+</li>
+<li>
+<img class="icon iVideo" src="http://a.xnimg.cn/a.gif"/>
+<a href="/share/list?pid=601040444&share_id=10288400843#10288400843">
+综艺马后炮11：中国女金刚吓倒日本和服男 印度阿三裤裆碎大石  </a>
+<span class="time"></span>
+</li></ul>
+</div>
+</div>
+
+ <a href="javascript:;" id="cancelFollow" onclick="cancelFollow();" style='display:none'>取消关注</a>
+<a target="_blank" href="http://support.renren.com/report/common?type=32&contentId=601040444&origURL=http://page.renren.com/601040444">举报该公共主页</a></div><div class="col-center">
+<script type="text/javascript">
+jQuery(function(){
+//开启空间 
+jQuery('#reopenBtn').bind('click',function(){
+XN.DO.confirm({
+title: '开启情侣空间',
+modal: true,
+message: '<div class="dialogtips">需要征询对方的同意才能开通情侣空间！</div><div style="padding: 20px 0 0"><p><textarea id="reopenMessage" style="border: 1px solid rgb(184, 212, 232); width: 350px; height: 50px; color: gray;" title="附加信息(选填，45字内)" onfocus="if(this.value==this.title) this.value=\'\';" onblur="if(this.value==\'\')this.value=this.title;">附加信息(选填，45字内)</textarea></p></div>',
+callback: function(r){
+if(r){
+var node = $('reopenMessage');
+if(node.value == node.title){
+node.value = '';
+}
+$('closeForm').lament.value = (node.value == node.title) ? '' : node.value;
+new XN.net.xmlhttp({
+url:'http://page.'+XN.env.domain+'/settings/setClosed',
+data:XN.FORM.serialize('closeForm'),
+method:'post',
+onSuccess:function(r){
+var ret = XN.JSON.parse(r.responseText);
+XN.DO.showMsg(ret.msg||'操作成功','温馨提示');
+setTimeout(function (){
+window.location.reload();
+},500);
+},
+onError : function(){
+}
+});
+}
+}
+});
+return false;
+});
+});	
+</script>	
+<div class="mod page-publisher">
+<div class="status-post">
+<h3>
+<span class="numb-count">
+<span id="messageLength">0/240</span>
+</span>给董成鹏留言				
+</h3>						
+<form name="messageForm" method="get" action="#">
+<div class="status-text">
+<input type="text" name="gid" value="0" style="display:none;" />
+<input type="text" name="cid" value="0" style="display:none;" />
+<input type="submit" value="留言" class="post-btn"/>
+<textarea name="message" autoComplete="off" id="t1"></textarea>
+</div>
+</form></div>
+</div>
+<div class="mod communion">
+<div class="mod-header">
+<h4>交流区</h4>
+</div>
+<div class="mod-body">		
+<div id="intercourseTabs" class="mod stabs">
+<a id="feedTab" href="javascript:;" class="current"><span>董成鹏的新鲜事</span></a>
+<a id="commentTab" href="javascript:;" ><span>关注者留言</span></a>
+<a id="replyTab" href="javascript:;" ><span>董成鹏的回复</span></a></div><script type="text/javascript">
+XN.page.data.statID= 'page_601040444_1';
+XN.page.data.level= '1';
+</script>
+<div id="feedView">
+<div class="feed-module" data-userid="601040444">
+<div class="feed-list">
+
+<article class="a-feed a-n-feed" id="newsfeed-15345696439">
+<aside>
+	<figure class="newsfeed-user" data-id="601040444" data-name="董成鹏" >
+		<a stats="NF_15345696439_2006_601040444" href="http://page.renren.com/601040444?ref=minifeed&sfet=2006&fin=0&fid=15345696439&ff_id=601040444&feed=page_sharevideo&tagid=11800958058"  target="_blank">
+		<img width="50" src="http://hdn.xnimg.cn/photos/hdn521/20111117/1105/h_tiny_aRFo_20a30007443a2f75.jpg" /></a>
+	</figure>
+</aside>
+	<h3>
+		
+			<a stats="NF_15345696439_2006_601040444" target="_blank" href="http://page.renren.com/601040444?ref=minifeed&sfet=2006&fin=0&fid=15345696439&ff_id=601040444&feed=page_sharevideo&tagid=11800958058" >董成鹏</a>
+			
+		
+		
+		<!-- :&nbsp;我终于明白我丢的那些自行车为什么找不回来了，因为我不会日...语！自行车自动寻回咒语：“摩西摩西，110呆死嘎？瓦塔西自行车滴丢啦！” -->
+                &nbsp;<span class="action">分享了视频</span>
+	</h3>
+	<div class="content">
+		<div class="source">
+                        <div class="rich-content">
+                                <div class="content-media">
+					<a stats="NF_15345696439_2006_601040444" style="background-image: url(http://photocdn.sohu.com/20120223/vrsb457246.jpg);" href="http://page.renren.com/share/list?pid=601040444&ref=minifeed&sfet=2006&fin=0&fid=15345696439&ff_id=601040444&feed=page_sharevideo&share_id=11800958058#11800958058&statID=page_601040444_2&level=1" class="thumb" target="_blank"><span class="play-btn"></span></a>
+				</div>
+				<div class="content-main">
+					<p class="title"><a stats="NF_15345696439_2006_601040444" href="http://page.renren.com/share/list?pid=601040444&ref=minifeed&sfet=2006&fin=0&fid=15345696439&ff_id=601040444&feed=page_sharevideo&share_id=11800958058#11800958058&statID=page_601040444_2&level=1" target="_blank">《你的单车》：搞笑日本人武汉丢车 </a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="details ui-new">
+		<div class="legend">
+			<span class="duration">2012-02-23 11:34</span>
+				
+			
+			<a stats="NF_15345696439_2006_601040444" href="http://page.renren.com/share/list?pid=601040444&ref=minifeed&sfet=2006&fin=0&fid=15345696439&ff_id=601040444&feed=page_sharevideo&share_id=11800958058#11800958058&statID=page_601040444_2&level=1" target="_blank">评论该分享</a>
+		</div>
+	</div>
+	<div class="feed-toolbar feed-toolbar-new">
+		<menu type="toolbar">
+			
+	                
+	 		
+	   	
+	
+			
+	
+		</menu>
+	</div>
+	
+
+</article>
+
+
+
+<article class="a-feed a-n-feed" id="newsfeed-15311804940">
+	<aside>
+	
+	<figure class="newsfeed-user"  noAvatar="" data-id="601040444" data-name="董成鹏"  create-time="" data-mark="" data-source="8869504082" data-stype="2002" data-fid="15311804940">
+		<a stats="NF_15311804940_2002_601040444" href="http://www.renren.com/profile.do?id=601040444&amp;ref=minifeed&sfet=2002&fin=1&fid=15311804940&ff_id=601040444" namecard="601040444" title="董成鹏" target="_blank">
+	        
+	        <img src="http://hdn.xnimg.cn/photos/hdn521/20111117/1105/h_tiny_aRFo_20a30007443a2f75.jpg" width="50" title="董成鹏" />
+	
+	</a>
+	
+	</figure>
+	</aside>
+	
+	
+	<h3>
+		
+			<a stats="NF_15311804940_2002_601040444" target="_blank" namecard="601040444" href="http://www.renren.com/profile.do?id=601040444&ref=minifeed&sfet=2002&fin=1&fid=15311804940&ff_id=601040444&feed=user_add" >董成鹏</a>
+
+
+		
+		<span class="action">加入了公共主页</span>
+	</h3>
+	<div class="content">
+		<div class="rich-content ">
+			
+			<div class="content-media">
+				<a stats="NF_15311804940_2002_601040444" class="thumb middle-thumb" href="http://page.renren.com/600938990?&statID=page_600938990_1&level=1&ref=minifeed&sfet=2002&fin=1&fid=15311804940&ff_id=601040444" target="_blank"><img src="http://hdn.xnimg.cn/photos/hdn521/20110919/2240/h_head_WMdm_3cb900002c762f75.jpg" width="100" /></a>
+			</div>
+			
+			<div class="content-main">
+				<p class="title"><a stats="NF_15311804940_2002_601040444" href="http://page.renren.com/600938990?&statID=page_600938990_1&level=1&ref=minifeed&sfet=2002&fin=1&fid=15311804940&ff_id=601040444" target="_blank">撒贝宁</a></p>
+				<p class="summary">英俊帅气，古怪精灵，多才多艺，能歌善舞的撒贝宁</p>
+			</div>
+
+		</div>
+	</div>
+	<div class="details ui-new">
+		<div class="legend">
+			<span class="duration">2012-02-21 13:55</span>
+				
+			
+			<a stats="NF_15311804940_2002_601040444" href="http://page.renren.com/pa/bf?pid=600938990&statID=page_600938990_1&level=1&ref=minifeed&sfet=2002&fin=1&fid=15311804940&ff_id=601040444" target="_blank" onmousedown="this.href=this.href+'&token='+XN.get_check;this.onmousedown='';">
+			
+				加为好友
+			
+			
+			</a>
+		</div>
+	</div>
+<div class="feed-toolbar feed-toolbar-new">
+	<menu type="toolbar">
+	    	
+		
+		
+		
+		
+	    
+	    
+
+		
+
+	</menu>
+</div>
+
+
+</article>
+
+
+
+<article class="a-feed a-n-feed" id="newsfeed-15311804949">
+	<aside>
+	
+	<figure class="newsfeed-user"  noAvatar="" data-id="601040444" data-name="董成鹏"  create-time="" data-mark="" data-source="8869504085" data-stype="2002" data-fid="15311804949">
+		<a stats="NF_15311804949_2002_601040444" href="http://www.renren.com/profile.do?id=601040444&amp;ref=minifeed&sfet=2002&fin=2&fid=15311804949&ff_id=601040444" namecard="601040444" title="董成鹏" target="_blank">
+	        
+	        <img src="http://hdn.xnimg.cn/photos/hdn521/20111117/1105/h_tiny_aRFo_20a30007443a2f75.jpg" width="50" title="董成鹏" />
+	
+	</a>
+	
+	</figure>
+	</aside>
+	
+	
+	<h3>
+		
+			<a stats="NF_15311804949_2002_601040444" target="_blank" namecard="601040444" href="http://www.renren.com/profile.do?id=601040444&ref=minifeed&sfet=2002&fin=2&fid=15311804949&ff_id=601040444&feed=user_add" >董成鹏</a>
+
+
+		
+		<span class="action">加入了公共主页</span>
+	</h3>
+	<div class="content">
+		<div class="rich-content ">
+			
+			<div class="content-media">
+				<a stats="NF_15311804949_2002_601040444" class="thumb middle-thumb" href="http://page.renren.com/600769591?&statID=page_600769591_1&level=1&ref=minifeed&sfet=2002&fin=2&fid=15311804949&ff_id=601040444" target="_blank"><img src="http://hdn.xnimg.cn/photos/hdn121/20111111/1520/h_head_FOEx_6fa000000e4e2f76.jpg" width="100" /></a>
+			</div>
+			
+			<div class="content-main">
+				<p class="title"><a stats="NF_15311804949_2002_601040444" href="http://page.renren.com/600769591?&statID=page_600769591_1&level=1&ref=minifeed&sfet=2002&fin=2&fid=15311804949&ff_id=601040444" target="_blank">Ms七七</a>&nbsp;<img src="http://a.xnimg.cn/imgpro/page/icon/official-1.png" title="人人网官方认证"/></p>
+				<p class="summary">爱DotA，爱生活。大家好，我是七七 ^^ 某非著名不专业DotA解说，希望大家多多支持呀~</p>
+			</div>
+
+		</div>
+	</div>
+	<div class="details ui-new">
+		<div class="legend">
+			<span class="duration">2012-02-21 13:55</span>
+				
+			
+			<a stats="NF_15311804949_2002_601040444" href="http://page.renren.com/pa/bf?pid=600769591&statID=page_600769591_1&level=1&ref=minifeed&sfet=2002&fin=2&fid=15311804949&ff_id=601040444" target="_blank" onmousedown="this.href=this.href+'&token='+XN.get_check;this.onmousedown='';">
+			
+				加为好友
+			
+			
+			</a>
+		</div>
+	</div>
+<div class="feed-toolbar feed-toolbar-new">
+	<menu type="toolbar">
+	    	
+		
+		
+		
+		
+	    
+	    
+
+		
+
+	</menu>
+</div>
+
+
+</article>
+
+
+
+<article class="a-feed a-n-feed" id="newsfeed-15311804745">
+	<aside>
+	
+	<figure class="newsfeed-user"  noAvatar="" data-id="601040444" data-name="董成鹏"  create-time="" data-mark="" data-source="8869504057" data-stype="2002" data-fid="15311804745">
+		<a stats="NF_15311804745_2002_601040444" href="http://www.renren.com/profile.do?id=601040444&amp;ref=minifeed&sfet=2002&fin=3&fid=15311804745&ff_id=601040444" namecard="601040444" title="董成鹏" target="_blank">
+	        
+	        <img src="http://hdn.xnimg.cn/photos/hdn521/20111117/1105/h_tiny_aRFo_20a30007443a2f75.jpg" width="50" title="董成鹏" />
+	
+	</a>
+	
+	</figure>
+	</aside>
+	
+	
+	<h3>
+		
+			<a stats="NF_15311804745_2002_601040444" target="_blank" namecard="601040444" href="http://www.renren.com/profile.do?id=601040444&ref=minifeed&sfet=2002&fin=3&fid=15311804745&ff_id=601040444&feed=user_add" >董成鹏</a>
+
+
+		
+		<span class="action">加入了公共主页</span>
+	</h3>
+	<div class="content">
+		<div class="rich-content ">
+			
+			<div class="content-media">
+				<a stats="NF_15311804745_2002_601040444" class="thumb middle-thumb" href="http://page.renren.com/600002213?&statID=page_600002213_1&level=1&ref=minifeed&sfet=2002&fin=3&fid=15311804745&ff_id=601040444" target="_blank"><img src="http://hdn.xnimg.cn/photos/hdn421/20091009/0245/head_GKsN_9750j019118.jpg" width="100" /></a>
+			</div>
+			
+			<div class="content-main">
+				<p class="title"><a stats="NF_15311804745_2002_601040444" href="http://page.renren.com/600002213?&statID=page_600002213_1&level=1&ref=minifeed&sfet=2002&fin=3&fid=15311804745&ff_id=601040444" target="_blank">安琥</a>&nbsp;<img src="http://a.xnimg.cn/imgpro/page/icon/official-1.png" title="人人网官方认证"/></p>
+				<p class="summary">这个地方时我随时更新动态和心情的地方，有时间也请大家登陆我的官方博客www.anhooline.com</p>
+			</div>
+
+		</div>
+	</div>
+	<div class="details ui-new">
+		<div class="legend">
+			<span class="duration">2012-02-21 13:55</span>
+				
+			
+			<a stats="NF_15311804745_2002_601040444" href="http://page.renren.com/pa/bf?pid=600002213&statID=page_600002213_1&level=1&ref=minifeed&sfet=2002&fin=3&fid=15311804745&ff_id=601040444" target="_blank" onmousedown="this.href=this.href+'&token='+XN.get_check;this.onmousedown='';">
+			
+				加为好友
+			
+			
+			</a>
+		</div>
+	</div>
+<div class="feed-toolbar feed-toolbar-new">
+	<menu type="toolbar">
+	    	
+		
+		
+		
+		
+	    
+	    
+
+		
+
+	</menu>
+</div>
+
+
+</article>
+
+
+
+<article class="a-feed a-n-feed" id="newsfeed-15311804849">
+	<aside>
+	
+	<figure class="newsfeed-user"  noAvatar="" data-id="601040444" data-name="董成鹏"  create-time="" data-mark="" data-source="8869504069" data-stype="2002" data-fid="15311804849">
+		<a stats="NF_15311804849_2002_601040444" href="http://www.renren.com/profile.do?id=601040444&amp;ref=minifeed&sfet=2002&fin=4&fid=15311804849&ff_id=601040444" namecard="601040444" title="董成鹏" target="_blank">
+	        
+	        <img src="http://hdn.xnimg.cn/photos/hdn521/20111117/1105/h_tiny_aRFo_20a30007443a2f75.jpg" width="50" title="董成鹏" />
+	
+	</a>
+	
+	</figure>
+	</aside>
+	
+	
+	<h3>
+		
+			<a stats="NF_15311804849_2002_601040444" target="_blank" namecard="601040444" href="http://www.renren.com/profile.do?id=601040444&ref=minifeed&sfet=2002&fin=4&fid=15311804849&ff_id=601040444&feed=user_add" >董成鹏</a>
+
+
+		
+		<span class="action">加入了公共主页</span>
+	</h3>
+	<div class="content">
+		<div class="rich-content ">
+			
+			<div class="content-media">
+				<a stats="NF_15311804849_2002_601040444" class="thumb middle-thumb" href="http://page.renren.com/600905258?&statID=page_600905258_1&level=1&ref=minifeed&sfet=2002&fin=4&fid=15311804849&ff_id=601040444" target="_blank"><img src="http://hdn.xnimg.cn/photos/hdn521/20110823/2230/h_head_7sNE_241b0000b9fb2f76.jpg" width="100" /></a>
+			</div>
+			
+			<div class="content-main">
+				<p class="title"><a stats="NF_15311804849_2002_601040444" href="http://page.renren.com/600905258?&statID=page_600905258_1&level=1&ref=minifeed&sfet=2002&fin=4&fid=15311804849&ff_id=601040444" target="_blank">蔡康永</a></p>
+				<p class="summary">蔡康永，台湾著名的节目主持人、作家。</p>
+			</div>
+
+		</div>
+	</div>
+	<div class="details ui-new">
+		<div class="legend">
+			<span class="duration">2012-02-21 13:55</span>
+				
+			
+			<a stats="NF_15311804849_2002_601040444" href="http://page.renren.com/pa/bf?pid=600905258&statID=page_600905258_1&level=1&ref=minifeed&sfet=2002&fin=4&fid=15311804849&ff_id=601040444" target="_blank" onmousedown="this.href=this.href+'&token='+XN.get_check;this.onmousedown='';">
+			
+				加为好友
+			
+			
+			</a>
+		</div>
+	</div>
+<div class="feed-toolbar feed-toolbar-new">
+	<menu type="toolbar">
+	    	
+		
+		
+		
+		
+	    
+	    
+
+		
+
+	</menu>
+</div>
+
+
+</article>
+
+
+
+<article class="a-feed a-n-feed" id="newsfeed-15310305941">
+<aside>
+	<figure class="newsfeed-user" data-id="601040444" data-name="董成鹏" >
+		<a stats="NF_15310305941_2006_601040444" href="http://page.renren.com/601040444?ref=minifeed&sfet=2006&fin=5&fid=15310305941&ff_id=601040444&feed=page_sharevideo&tagid=11766249562"  target="_blank">
+		<img width="50" src="http://hdn.xnimg.cn/photos/hdn521/20111117/1105/h_tiny_aRFo_20a30007443a2f75.jpg" /></a>
+	</figure>
+</aside>
+	<h3>
+		
+			<a stats="NF_15310305941_2006_601040444" target="_blank" href="http://page.renren.com/601040444?ref=minifeed&sfet=2006&fin=5&fid=15310305941&ff_id=601040444&feed=page_sharevideo&tagid=11766249562" >董成鹏</a>
+			
+		
+		
+		<!-- :&nbsp;太励志了！还记得《非你莫属》里被张绍刚挤兑的那个女孩刘俐俐吗？她终于找到了一份工作，竟然是主持人！和大鹏董成鹏一起主持大鹏嘚吧嘚的双语版。真是狠狠抽了张绍刚一个大嘴巴！比张绍刚主持得还好！ -->
+                &nbsp;<span class="action">分享了视频</span>
+	</h3>
+	<div class="content">
+		<div class="source">
+                        <div class="rich-content">
+                                <div class="content-media">
+					<a stats="NF_15310305941_2006_601040444" style="background-image: url(http://photocdn.sohu.com/20120221/vrsb455263.jpg);" href="http://page.renren.com/share/list?pid=601040444&ref=minifeed&sfet=2006&fin=5&fid=15310305941&ff_id=601040444&feed=page_sharevideo&share_id=11766249562#11766249562&statID=page_601040444_2&level=1" class="thumb" target="_blank"><span class="play-btn"></span></a>
+				</div>
+				<div class="content-main">
+					<p class="title"><a stats="NF_15310305941_2006_601040444" href="http://page.renren.com/share/list?pid=601040444&ref=minifeed&sfet=2006&fin=5&fid=15310305941&ff_id=601040444&feed=page_sharevideo&share_id=11766249562#11766249562&statID=page_601040444_2&level=1" target="_blank">刘俐俐面试《大鹏嘚吧嘚》 双语主持秒杀张绍刚</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="details ui-new">
+		<div class="legend">
+			<span class="duration">2012-02-21 12:24</span>
+				
+			
+			<a stats="NF_15310305941_2006_601040444" href="http://page.renren.com/share/list?pid=601040444&ref=minifeed&sfet=2006&fin=5&fid=15310305941&ff_id=601040444&feed=page_sharevideo&share_id=11766249562#11766249562&statID=page_601040444_2&level=1" target="_blank">评论该分享</a>
+		</div>
+	</div>
+	<div class="feed-toolbar feed-toolbar-new">
+		<menu type="toolbar">
+			
+	                
+	 		
+	   	
+	
+			
+	
+		</menu>
+	</div>
+	
+
+</article>
+
+
+
+<article class="a-feed a-n-feed" id="newsfeed-13881353899">
+	<aside>
+	
+	<figure class="newsfeed-user"  noAvatar="" data-id="601040444" data-name="董成鹏"  create-time="" data-mark="" data-source="10481475381" data-stype="2003" data-fid="13881353899">
+		<a stats="NF_13881353899_2003_601040444" href="http://www.renren.com/profile.do?id=601040444&amp;ref=minifeed&sfet=2003&fin=6&fid=13881353899&ff_id=601040444" namecard="601040444" title="董成鹏" target="_blank">
+	        
+	        <img src="http://hdn.xnimg.cn/photos/hdn521/20111117/1105/h_tiny_aRFo_20a30007443a2f75.jpg" width="50" title="董成鹏" />
+	
+	</a>
+	
+	</figure>
+	</aside>
+	
+	
+	<h3>
+		
+			<a stats="NF_13881353899_2003_601040444" target="_blank" namecard="601040444" href="http://www.renren.com/profile.do?id=601040444&ref=minifeed&sfet=2003&fin=6&fid=13881353899&ff_id=601040444&feed=user_blogshare" >董成鹏</a>
+			
+		
+                <!--  -->
+		&nbsp;<span class="action">分享了日志</span>
+	</h3>
+	<div class="content">
+          <div class="source">
+          <div class="rich-content no-media">
+            <div class="content-main">
+              <p class="title"><a stats="NF_13881353899_2003_601040444" href="http://page.renren.com/601040444/note/787750880?&ref=minifeed&sfet=2003&fin=6&fid=13881353899&ff_id=601040444&feed=user_blogshare&statID=page_601040444_2&level=1" target="_blank">2011年12月19 20 21 晚19:30 繁星戏剧村，大鹏准时开“脱”</a></p>
+              <p class="summary">大鹏剧场秀第二季：《我们船上见》，将在繁星戏剧村连演三场，这对于脱口秀界无疑是一剂猛药，更是对海派清口周立波的公然叫板。继第一季开创将互联网脱口秀搬至线下的全新模式，本次更是开网络付费脱口秀的先河。2012年，世界末日近在咫尺，分离、...</p>
+              <p class="from">来自:&nbsp;<a stats="NF_13881353899_2003_601040444" href="http://page.renren.com/601040444?ref=minifeed&sfet=2003&fin=6&fid=13881353899&ff_id=601040444&feed=user_blogshare&statID=page_601040444_2&level=1" target="_blank">董成鹏</a></p>
+            </div>
+          </div>
+          </div>
+	</div>
+	<div class="details ui-new">
+		<div class="legend">
+			<span class="duration">2011-12-07 17:07</span>
+				
+			
+			<a stats="NF_13881353899_2003_601040444" href="http://share.renren.com/share/ShareList.do?id=601040444&ref=minifeed&sfet=2003&fin=6&fid=13881353899&ff_id=601040444&f&statID=page_601040444_2&level=1eed=user_blogshare&share_id=10481475381#share_10481475381" target="_blank">评论该分享</a>
+		</div>
+	</div>
+<div class="feed-toolbar feed-toolbar-new">
+	<menu type="toolbar">
+	    	
+		
+		
+		
+		
+	    
+	    
+
+		
+
+	</menu>
+</div>
+
+
+</article>
+
+
+<article class="a-feed a-n-feed" id="newsfeed-13881342412">
+	<aside>
+		<figure class="newsfeed-user" data-id="601040444" data-name="董成鹏" >
+			<a stats="NF_13881342412_2012_601040444" href="http://page.renren.com/601040444?ref=minifeed&sfet=2012&fin=7&fid=13881342412&ff_id=601040444&feed=page_blog&tagid=787750880"  target="_blank"><img width="50" src="http://hdn.xnimg.cn/photos/hdn521/20111117/1105/h_tiny_aRFo_20a30007443a2f75.jpg" /></a>
+		</figure>
+	</aside>
+	<h3>
+		<a stats="NF_13881342412_2012_601040444" href="http://www.renren.com/profile.do?id=601040444&ref=minifeed&sfet=2012&fin=7&fid=13881342412&ff_id=601040444&feed=page_blog&tagid=787750880" target="_blank">董成鹏</a>
+                
+		<span class="action">发表了日志</span>
+	</h3>
+	<div class="content">
+		<div class="rich-content ">
+		
+		
+			<div class="content-media">
+				<a stats="NF_13881342412_2012_601040444" class="thumb middle-thumb" href="http://page.renren.com/601040444/note/787750880?&statID=page_601040444_2&level=1" target="_blank"><img src="http://fmn.rrfmn.com/fmn058/20111207/1700/b_head_uOOF_526f00003ee21263.jpg" width="100" onerror="this.src='http://a.xnimg.cn/imgpro/bg/default-pic.png'" /></a>
+			</div>
+		
+		
+		<div class="content-main">
+			<p class="title"><a stats="NF_13881342412_2012_601040444" href="http://page.renren.com/601040444/note/787750880?ref=minifeed&sfet=2012&fin=7&fid=13881342412&ff_id=601040444&feed=page_blog&tagid=787750880&statID=page_601040444_2&level=1" target="_blank">2011年12月19 20 21 晚19:30 繁星戏剧村，大鹏准时开“脱”</a></p>
+			<p class="summary">&#22823;&#40527;&#21095;&#22330;&#31168;&#31532;&#20108;&#23395;&#65306;&#12298;&#25105;&#20204;&#33337;&#19978;&#35265;&#12299;&#65292;&#23558;&#22312;&#32321;&#26143;&#25103;&#21095;&#26449;&#36830;&#28436;&#19977;&#22330;&#65292;&#36825;&#23545;&#20110;&#33073;&#21475;&#31168;&#30028;&#26080;&#30097;&#26159;&#19968;&#21058;&#29467;&#33647;&#65292;&#26356;&#26159;&#23545;&#28023;&#27966;&#28165;&#21475;&#21608;&#31435;&#27874;&#30340;&#20844;&#28982;&#21483;&#26495;&#12290;&#32487;&#31532;&#19968;&#23395;&#24320;&#21019;&#23558;&#20114;&#32852;&#32593;&#33073;&#21475;&#31168;&#25644;&#33267;&#32447;&#19979;&#30340;&#20840;&#26032;&#27169;&#24335;&#65292;&#26412;&#27425;&#26356;&#26159;&#24320;&#32593;&#32476;&#20184;&#36153;&#33073;&#21475;&#31168;&#30340;&#20808;&#27827;&#12290;2012&#24180;&#65292;&#19990;&#30028;&#26411;&#26085;&#36817;&#22312;&#21675;&#23610;&#65292;&#20998;&#31163;&#12289;&#27515;&#20129;&#12289;&#27585;&#28781;&#12289;&#19978;&#33337;OR&#19981;&#19978;&#33337;&#65311;&#26126;&#22825;&#20250;&#24590;&#26679;&#65311;&#21548;&#21733;&#19978;&#33337;&#35828;&#12290;&#28436;&#20986;&#21517;&#31216;&#65306;&#12298;&#22823;&#40527;&#22042;&#21543;&#22042;&#12299;&#20043;&#21095;&#22330;&#31168;&#31532;&#20108;&#23395;&#65306;&#12298;&#25105;&#20204;&#33337;&#19978;&#35265;&#12299;&#28436;&#20986;&#26102;&#38388;&#65306;2011&#24180;...</p>
+		</div>
+		</div>
+	</div>
+	<div class="details ui-new">
+		<div class="legend">
+			<span class="duration">2011-12-07 17:06</span>
+				
+			
+			<a stats="NF_13881342412_2012_601040444" href="#nogo"  class="share_new" data-share="{stype:'create_share_feed',id:787750880,owner:601040444,type:'pageBlog' }" >分享</a>
+		</div>
+                
+                <div class="feed-replies" id="feedbody13881342412" >
+                  
+                  
+                  
+                </div>
+                
+                <div class="feed-comment" >
+                  <span class="avatar">
+                    <img src="http://a.xnimg.cn/a.gif" />
+                  </span>
+                  <div class="comment-box">
+                    <textarea data-fid="13881342412" autocomplete="off">评论...</textarea>
+                    <div class="action">
+                      <div class="action-l">
+                        
+                        
+                        <a href="#nogo" onclick="return false;" class="mention">@<span class="tip"><span class="arrow"></span>点名</span></a>
+                        
+                        
+                      </div>
+                      <div class="action-r">
+                        <a href="#nogo" onclick="return false;" class="submit submit-disabled">回复</a>
+                        
+                        <span class="count"><span class="inputed">0</span>/<span class="maxlength">140</span></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div id="get-params-for-ilike-787750880" style="display:none;">
+                <div id="reply-params-13881342412" style="display:none;">
+                {
+                  "cid": "787750880",
+                  "oid": "601040444",
+                  "type": "page",
+                  "typeNum": "",
+                  "rpLength": "0",
+                  "userDigged":"",
+                  "digged":"",
+                  "stype":"2012",
+                  
+                  
+                  "loadURI": "http://page.renren.com/601040444/note/replyList",
+                  "sendURI": "http://page.renren.com/601040444/note/reply",
+                  "delURI": "http://page.renren.com/601040444/note/replyDelete"
+                  
+                  
+                  
+                  
+                }
+                </div>
+                </div>
+                
+	</div>
+	<div class="feed-toolbar feed-toolbar-new">
+		<menu type="toolbar">
+			
+	                
+	 		
+	   	
+	
+			
+	
+		</menu>
+	</div>
+	
+
+</article>
+
+
+<article class="a-feed a-n-feed" id="newsfeed-13850761863">
+<aside>
+
+	<figure class="newsfeed-user" data-id="601040444" data-name="董成鹏" >
+<a stats="NF_13850761863_2008_601040444" href="http://page.renren.com/601040444?ref=minifeed&sfet=2008&fin=8&fid=13850761863&ff_id=601040444&feed=page_status&tagid=2799025847"  target="_blank"><img width="50" src="http://hdn.xnimg.cn/photos/hdn521/20111117/1105/h_tiny_aRFo_20a30007443a2f75.jpg" /></a>
+	</figure>
+</aside>
+<h3><a stats="NF_13850761863_2008_601040444" href="http://page.renren.com/601040444?&ref=minifeed&sfet=2008&fin=8&fid=13850761863&ff_id=601040444&feed=page_status&tagid=2799025847"  target="_blank">董成鹏</a>
+
+: 大鹏剧场秀第二季马上登场，12月19、20、21繁星戏剧村晚上19:30 准时开脱
+</h3>
+<div class="details ui-new">
+<div class="legend">
+<span class="duration">2011-12-06 10:28</span>
+	
+
+
+
+<a stats="NF_13850761863_2008_601040444" href="#nogo" onclick="forwardDoing('2799025847', '601040444', 'page_601040444_2', '1');" class="share-forward">分享</a>
+
+
+</div>
+<div id="media2799025847"></div>
+
+<div class="feed-replies" id="feedbody13850761863" >
+  
+  <div class="a-reply">
+    <a href="http://www.renren.com/profile.do?id=353635683&ref=minifeed&sfet=2008&fin=8&fid=13850761863&ff_id=601040444" class="avatar" target="_blank" namecard="353635683">
+      
+      <img src="http://hdn.xnimg.cn/photos/hdn421/20130110/1605/h_tiny_nSiH_2f6000000aa2113e.jpg" />
+    </a>
+    <div class="reply-content">
+      <p class="text" >
+        <a href="http://www.renren.com/profile.do?id=353635683&ref=minifeed&sfet=2008&fin=8&fid=13850761863&ff_id=601040444" class="name" namecard="353635683" target="_blank">田雨夕S̶u̶n̶n̶y</a>:&nbsp;
+
+
+
+<img src='http://a.xnimg.cn/imgpro/icons/statusface/1.gif?ver=1' alt='微笑' /><img src='http://a.xnimg.cn/imgpro/icons/statusface/1.gif?ver=1' alt='微笑' />
+
+      </p>
+      <div class="bottom-bar">
+        <span class="time">2013-01-26 02:33</span>
+        <div class="action">
+
+          
+
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+</div>
+
+<div class="feed-comment" >
+  <span class="avatar">
+    <img src="http://a.xnimg.cn/a.gif" />
+  </span>
+  <div class="comment-box">
+    <textarea data-fid="13850761863" autocomplete="off">评论...</textarea>
+    <div class="action">
+      <div class="action-l">
+        
+        
+        <a href="#nogo" onclick="return false;" class="mention">@<span class="tip"><span class="arrow"></span>点名</span></a>
+        
+        
+      </div>
+      <div class="action-r">
+        <a href="#nogo" onclick="return false;" class="submit submit-disabled">回复</a>
+        
+        <span class="count"><span class="inputed">0</span>/<span class="maxlength">140</span></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="get-params-for-ilike-2799025847" style="display:none;">
+<div id="reply-params-13850761863" style="display:none;">
+{
+  "cid": "2799025847",
+  "oid": "601040444",
+  "type": "page",
+  "typeNum": "3",
+  "rpLength": "1",
+  "userDigged":"",
+  "digged":"",
+  "stype":"2008",
+  
+  
+  
+  
+  "loadURI": "http://page.renren.com/doing/replyList",
+  "sendURI": "http://page.renren.com/doing/reply",
+  "delURI": "http://page.renren.com/doing/delReply"
+  
+  
+}
+</div>
+</div>
+
+</div>
+<div class="feed-toolbar feed-toolbar-new">
+	<menu type="toolbar">
+		
+                
+ 		
+   	
+
+		
+
+	</menu>
+</div>
+
+
+</article>
+
+
+
+<article class="a-feed a-n-feed" id="newsfeed-13736322249">
+<aside>
+	<figure class="newsfeed-user" data-id="601040444" data-name="董成鹏" >
+		<a stats="NF_13736322249_2006_601040444" href="http://page.renren.com/601040444?ref=minifeed&sfet=2006&fin=9&fid=13736322249&ff_id=601040444&feed=page_sharevideo&tagid=10338477529"  target="_blank">
+		<img width="50" src="http://hdn.xnimg.cn/photos/hdn521/20111117/1105/h_tiny_aRFo_20a30007443a2f75.jpg" /></a>
+	</figure>
+</aside>
+	<h3>
+		
+			<a stats="NF_13736322249_2006_601040444" target="_blank" href="http://page.renren.com/601040444?ref=minifeed&sfet=2006&fin=9&fid=13736322249&ff_id=601040444&feed=page_sharevideo&tagid=10338477529" >董成鹏</a>
+			
+		
+		
+		<!--  -->
+                &nbsp;<span class="action">分享了视频</span>
+	</h3>
+	<div class="content">
+		<div class="source">
+                        <div class="rich-content">
+                                <div class="content-media">
+					<a stats="NF_13736322249_2006_601040444" style="background-image: url(http://photocdn.sohu.com/20111201/vrsb389876.jpg);" href="http://page.renren.com/share/list?pid=601040444&ref=minifeed&sfet=2006&fin=9&fid=13736322249&ff_id=601040444&feed=page_sharevideo&share_id=10338477529#10338477529&statID=page_601040444_2&level=1" class="thumb" target="_blank"><span class="play-btn"></span></a>
+				</div>
+				<div class="content-main">
+					<p class="title"><a stats="NF_13736322249_2006_601040444" href="http://page.renren.com/share/list?pid=601040444&ref=minifeed&sfet=2006&fin=9&fid=13736322249&ff_id=601040444&feed=page_sharevideo&share_id=10338477529#10338477529&statID=page_601040444_2&level=1" target="_blank">大鹏讲道德：消费生命沉迷《魔兽》 </a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="details ui-new">
+		<div class="legend">
+			<span class="duration">2011-12-01 12:51</span>
+				
+			
+			<a stats="NF_13736322249_2006_601040444" href="http://page.renren.com/share/list?pid=601040444&ref=minifeed&sfet=2006&fin=9&fid=13736322249&ff_id=601040444&feed=page_sharevideo&share_id=10338477529#10338477529&statID=page_601040444_2&level=1" target="_blank">评论该分享</a>
+		</div>
+	</div>
+	<div class="feed-toolbar feed-toolbar-new">
+		<menu type="toolbar">
+			
+	                
+	 		
+	   	
+	
+			
+	
+		</menu>
+	</div>
+	
+
+</article>
+
+
+
+<article class="a-feed a-n-feed" id="newsfeed-13686644306">
+<aside>
+
+	<figure class="newsfeed-user" data-id="601040444" data-name="董成鹏" >
+<a stats="NF_13686644306_2008_601040444" href="http://page.renren.com/601040444?ref=minifeed&sfet=2008&fin=10&fid=13686644306&ff_id=601040444&feed=page_status&tagid=2766106458"  target="_blank"><img width="50" src="http://hdn.xnimg.cn/photos/hdn521/20111117/1105/h_tiny_aRFo_20a30007443a2f75.jpg" /></a>
+	</figure>
+</aside>
+<h3><a stats="NF_13686644306_2008_601040444" href="http://page.renren.com/601040444?&ref=minifeed&sfet=2008&fin=10&fid=13686644306&ff_id=601040444&feed=page_status&tagid=2766106458"  target="_blank">董成鹏</a>
+
+: 最新一期马后炮上线了，当当当当，日本女优综艺节目遭猥亵、印度阿三裤裆碎大石、中国女金刚吓傻日本和服男、美国猛男巅峰对决，更多精彩尽在本期
+</h3>
+<div class="details ui-new">
+<div class="legend">
+<span class="duration">2011-11-29 09:34</span>
+	
+
+
+
+<a stats="NF_13686644306_2008_601040444" href="#nogo" onclick="forwardDoing('2766106458', '601040444', 'page_601040444_2', '1');" class="share-forward">分享</a>
+
+
+</div>
+<div id="media2766106458"></div>
+
+<div class="feed-replies" id="feedbody13686644306" >
+  
+  
+  
+</div>
+
+<div class="feed-comment" >
+  <span class="avatar">
+    <img src="http://a.xnimg.cn/a.gif" />
+  </span>
+  <div class="comment-box">
+    <textarea data-fid="13686644306" autocomplete="off">评论...</textarea>
+    <div class="action">
+      <div class="action-l">
+        
+        
+        <a href="#nogo" onclick="return false;" class="mention">@<span class="tip"><span class="arrow"></span>点名</span></a>
+        
+        
+      </div>
+      <div class="action-r">
+        <a href="#nogo" onclick="return false;" class="submit submit-disabled">回复</a>
+        
+        <span class="count"><span class="inputed">0</span>/<span class="maxlength">140</span></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="get-params-for-ilike-2766106458" style="display:none;">
+<div id="reply-params-13686644306" style="display:none;">
+{
+  "cid": "2766106458",
+  "oid": "601040444",
+  "type": "page",
+  "typeNum": "3",
+  "rpLength": "0",
+  "userDigged":"",
+  "digged":"",
+  "stype":"2008",
+  
+  
+  
+  
+  "loadURI": "http://page.renren.com/doing/replyList",
+  "sendURI": "http://page.renren.com/doing/reply",
+  "delURI": "http://page.renren.com/doing/delReply"
+  
+  
+}
+</div>
+</div>
+
+</div>
+<div class="feed-toolbar feed-toolbar-new">
+	<menu type="toolbar">
+		
+                
+ 		
+   	
+
+		
+
+	</menu>
+</div>
+
+
+</article>
+
+
+
+<article class="a-feed a-n-feed" id="newsfeed-13686634760">
+<aside>
+	<figure class="newsfeed-user" data-id="601040444" data-name="董成鹏" >
+		<a stats="NF_13686634760_2006_601040444" href="http://page.renren.com/601040444?ref=minifeed&sfet=2006&fin=11&fid=13686634760&ff_id=601040444&feed=page_sharevideo&tagid=10288400843"  target="_blank">
+		<img width="50" src="http://hdn.xnimg.cn/photos/hdn521/20111117/1105/h_tiny_aRFo_20a30007443a2f75.jpg" /></a>
+	</figure>
+</aside>
+	<h3>
+		
+			<a stats="NF_13686634760_2006_601040444" target="_blank" href="http://page.renren.com/601040444?ref=minifeed&sfet=2006&fin=11&fid=13686634760&ff_id=601040444&feed=page_sharevideo&tagid=10288400843" >董成鹏</a>
+			
+		
+		
+		<!--  -->
+                &nbsp;<span class="action">分享了视频</span>
+	</h3>
+	<div class="content">
+		<div class="source">
+                        <div class="rich-content">
+                                <div class="content-media">
+					<a stats="NF_13686634760_2006_601040444" style="background-image: url(http://photocdn.sohu.com/20111128/vrsb387790.jpg);" href="http://page.renren.com/share/list?pid=601040444&ref=minifeed&sfet=2006&fin=11&fid=13686634760&ff_id=601040444&feed=page_sharevideo&share_id=10288400843#10288400843&statID=page_601040444_2&level=1" class="thumb" target="_blank"><span class="play-btn"></span></a>
+				</div>
+				<div class="content-main">
+					<p class="title"><a stats="NF_13686634760_2006_601040444" href="http://page.renren.com/share/list?pid=601040444&ref=minifeed&sfet=2006&fin=11&fid=13686634760&ff_id=601040444&feed=page_sharevideo&share_id=10288400843#10288400843&statID=page_601040444_2&level=1" target="_blank">综艺马后炮11：中国女金刚吓倒日本和服男 印度阿三裤裆碎大石 </a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="details ui-new">
+		<div class="legend">
+			<span class="duration">2011-11-29 09:33</span>
+				
+			
+			<a stats="NF_13686634760_2006_601040444" href="http://page.renren.com/share/list?pid=601040444&ref=minifeed&sfet=2006&fin=11&fid=13686634760&ff_id=601040444&feed=page_sharevideo&share_id=10288400843#10288400843&statID=page_601040444_2&level=1" target="_blank">评论该分享</a>
+		</div>
+	</div>
+	<div class="feed-toolbar feed-toolbar-new">
+		<menu type="toolbar">
+			
+	                
+	 		
+	   	
+	
+			
+	
+		</menu>
+	</div>
+	
+
+</article>
+
+
+
+<article class="a-feed a-n-feed" id="newsfeed-13590355524">
+<aside>
+	<figure class="newsfeed-user" data-id="601040444" data-name="董成鹏" >
+		<a stats="NF_13590355524_2006_601040444" href="http://page.renren.com/601040444?ref=minifeed&sfet=2006&fin=12&fid=13590355524&ff_id=601040444&feed=page_sharevideo&tagid=10175892838"  target="_blank">
+		<img width="50" src="http://hdn.xnimg.cn/photos/hdn521/20111117/1105/h_tiny_aRFo_20a30007443a2f75.jpg" /></a>
+	</figure>
+</aside>
+	<h3>
+		
+			<a stats="NF_13590355524_2006_601040444" target="_blank" href="http://page.renren.com/601040444?ref=minifeed&sfet=2006&fin=12&fid=13590355524&ff_id=601040444&feed=page_sharevideo&tagid=10175892838" >董成鹏</a>
+			
+		
+		
+		<!--  -->
+                &nbsp;<span class="action">分享了视频</span>
+	</h3>
+	<div class="content">
+		<div class="source">
+                        <div class="rich-content">
+                                <div class="content-media">
+					<a stats="NF_13590355524_2006_601040444" style="background-image: url(http://photocdn.sohu.com/20111124/vrsb384238.jpg);" href="http://page.renren.com/share/list?pid=601040444&ref=minifeed&sfet=2006&fin=12&fid=13590355524&ff_id=601040444&feed=page_sharevideo&share_id=10175892838#10175892838&statID=page_601040444_2&level=1" class="thumb" target="_blank"><span class="play-btn"></span></a>
+				</div>
+				<div class="content-main">
+					<p class="title"><a stats="NF_13590355524_2006_601040444" href="http://page.renren.com/share/list?pid=601040444&ref=minifeed&sfet=2006&fin=12&fid=13590355524&ff_id=601040444&feed=page_sharevideo&share_id=10175892838#10175892838&statID=page_601040444_2&level=1" target="_blank">大鹏嘚吧嘚400：柳岩献媚 刘心抢琴 经典不断 </a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="details ui-new">
+		<div class="legend">
+			<span class="duration">2011-11-24 10:15</span>
+				
+			
+			<a stats="NF_13590355524_2006_601040444" href="http://page.renren.com/share/list?pid=601040444&ref=minifeed&sfet=2006&fin=12&fid=13590355524&ff_id=601040444&feed=page_sharevideo&share_id=10175892838#10175892838&statID=page_601040444_2&level=1" target="_blank">评论该分享</a>
+		</div>
+	</div>
+	<div class="feed-toolbar feed-toolbar-new">
+		<menu type="toolbar">
+			
+	                
+	 		
+	   	
+	
+			
+	
+		</menu>
+	</div>
+	
+
+</article>
+
+
+
+<article class="a-feed a-n-feed" id="newsfeed-13454785350">
+	<aside>
+	
+	<figure class="newsfeed-user"  noAvatar="" data-id="601040444" data-name="董成鹏"  create-time="" data-mark="" data-source="10024662612" data-stype="2003" data-fid="13454785350">
+		<a stats="NF_13454785350_2003_601040444" href="http://www.renren.com/profile.do?id=601040444&amp;ref=minifeed&sfet=2003&fin=13&fid=13454785350&ff_id=601040444" namecard="601040444" title="董成鹏" target="_blank">
+	        
+	        <img src="http://hdn.xnimg.cn/photos/hdn521/20111117/1105/h_tiny_aRFo_20a30007443a2f75.jpg" width="50" title="董成鹏" />
+	
+	</a>
+	
+	</figure>
+	</aside>
+	
+	
+	<h3>
+		
+			<a stats="NF_13454785350_2003_601040444" target="_blank" namecard="601040444" href="http://www.renren.com/profile.do?id=601040444&ref=minifeed&sfet=2003&fin=13&fid=13454785350&ff_id=601040444&feed=user_blogshare" >董成鹏</a>
+			
+		
+                <!-- :&nbsp;全节目组捆一块儿，也喝不过Makiyo一个姑娘 -->
+		&nbsp;<span class="action">分享了日志</span>
+	</h3>
+	<div class="content">
+          <div class="source">
+          <div class="rich-content no-media">
+            <div class="content-main">
+              <p class="title"><a stats="NF_13454785350_2003_601040444" href="http://page.renren.com/601015201/note/779698146?&ref=minifeed&sfet=2003&fin=13&fid=13454785350&ff_id=601040444&feed=user_blogshare&statID=page_601015201_1&level=1" target="_blank">《大鹏嘚吧嘚》399期内容提要</a></p>
+              <p class="summary">《大鹏嘚吧嘚》399期：Makiyo自曝醉酒失忆；众明星酒醉丑态百出；导演随身携带女星裸照；毒枭包养女明星；巩新亮遭偷拍欲隐退；日本版《还珠》配音似AV；艾薇儿酒醉遭破相……尽在本期精彩。...</p>
+              <p class="from">来自:&nbsp;<a stats="NF_13454785350_2003_601040444" href="http://page.renren.com/601015201?ref=minifeed&sfet=2003&fin=13&fid=13454785350&ff_id=601040444&feed=user_blogshare&statID=page_601015201_1&level=1" target="_blank">大鹏嘚吧嘚</a></p>
+            </div>
+          </div>
+          </div>
+	</div>
+	<div class="details ui-new">
+		<div class="legend">
+			<span class="duration">2011-11-17 13:48</span>
+				
+			
+			<a stats="NF_13454785350_2003_601040444" href="http://share.renren.com/share/ShareList.do?id=601040444&ref=minifeed&sfet=2003&fin=13&fid=13454785350&ff_id=601040444&f&statID=page_601015201_1&level=1eed=user_blogshare&share_id=10024662612#share_10024662612" target="_blank">评论该分享</a>
+		</div>
+	</div>
+<div class="feed-toolbar feed-toolbar-new">
+	<menu type="toolbar">
+	    	
+		
+		
+		
+		
+	    
+	    
+
+		
+
+	</menu>
+</div>
+
+
+</article>
+
+
+<article class="a-feed" id="newsfeed-13453846086">
+<aside>
+
+<figure class="newsfeed-user"  noAvatar="" data-id="601040444" data-name="董成鹏"  create-time="" data-mark="" data-source="531647656" data-stype="709" data-fid="13453846086">
+	<a stats="NF_13453846086_709_601040444" href="http://www.renren.com/profile.do?id=601040444&amp;ref=minifeed&sfet=709&fin=14&fid=13453846086&ff_id=601040444" namecard="601040444" title="董成鹏" target="_blank">
+        
+        <img src="http://hdn.xnimg.cn/photos/hdn521/20111117/1105/h_tiny_aRFo_20a30007443a2f75.jpg" width="50" title="董成鹏" />
+
+</a>
+
+</figure>
+</aside>
+
+
+<h3>
+<a stats="NF_13453846086_709_601040444" href="http://www.renren.com/profile.do?id=601040444&ref=minifeed&sfet=709&fin=14&fid=13453846086&ff_id=601040444" namecard="601040444" target="_blank">董成鹏</a>
+
+
+
+上传了24张照片至
+<a stats="NF_13453846086_709_601040444" href="http://photo.renren.com/photo/601040444/album-531647656?ref=minifeed&sfet=709&fin=14&fid=13453846086&ff_id=601040444" target="_blank">戏里戏外</a>
+</h3>
+<div id="moreThumbnails13453846086" class="content">
+
+<div class="photo-item">
+	<a stats="NF_13453846086_709_601040444" href="http://photo.renren.com/photo/601040444/photo-5257682625?ref=minifeed&sfet=709&fin=14&fid=13453846086&ff_id=601040444" target="_blank"><img width="100" src="http://fmn.rrimg.com/fmn061/20111117/1255/head_GJ14_7b8d0001158d1261.jpg" data-large="http://fmn.rrimg.com/fmn061/20111117/1255/large_GJ14_7b8d0001158d1261.jpg" class="photo"/></a>
+        
+</div>
+ 
+<div class="photo-item">
+	<a stats="NF_13453846086_709_601040444" href="http://photo.renren.com/photo/601040444/photo-5257682624?ref=minifeed&sfet=709&fin=14&fid=13453846086&ff_id=601040444" target="_blank"><img width="100" src="http://fmn.rrimg.com/fmn060/20111117/1255/head_DkyG_04ce00011839121b.jpg" data-large="http://fmn.rrimg.com/fmn060/20111117/1255/large_DkyG_04ce00011839121b.jpg" class="photo"/></a>
+        
+</div>
+ 
+<div class="photo-item">
+	<a stats="NF_13453846086_709_601040444" href="http://photo.renren.com/photo/601040444/photo-5257566794?ref=minifeed&sfet=709&fin=14&fid=13453846086&ff_id=601040444" target="_blank"><img width="100" src="http://fmn.rrimg.com/fmn063/20111117/1215/head_qou1_7c460001140b1261.jpg" data-large="http://fmn.rrimg.com/fmn063/20111117/1215/original_qou1_7c460001140b1261.jpg" class="photo"/></a>
+        
+</div>
+
+<a stats="NF_13453846086_709_601040444"  target="_blank" class="more" href="http://photo.renren.com/photo/601040444/album-531647656?ref=minifeed&sfet=709&fin=14&fid=13453846086&ff_id=601040444&from=feed">查看更多</a>
+</div>
+<div class="details ui-new">
+<div class="legend">
+<span class="duration">2011-11-17 12:56</span>
+	
+		<span class="from">
+			<a stats="NF___" href="http://jisu.renren.com/feedtail" target="_blank">通过人人极速相册发布</a>
+		</span>
+		
+	
+
+
+
+<a stats="NF_13453846086_709_601040444" href="#nogo"  id="ILike531647656" onclick="ILike_toggleUserLike('album','531647656','0','601040444','')" class="ilike_icon">赞</a>
+
+</div>
+
+<div class="feed-replies" id="feedbody13453846086" >
+  
+  
+  
+</div>
+
+<div class="feed-comment" >
+  <span class="avatar">
+    <img src="http://a.xnimg.cn/a.gif" />
+  </span>
+  <div class="comment-box">
+    <textarea data-fid="13453846086" autocomplete="off">评论...</textarea>
+    <div class="action">
+      <div class="action-l">
+        
+        <a href="#nogo" onclick="return false;" class="emotion">表情<span class="tip"><span class="arrow"></span>表情</span></a>
+        
+        
+        <a href="#nogo" onclick="return false;" class="mention">@<span class="tip"><span class="arrow"></span>点名</span></a>
+        
+        
+        <span class="share">
+          <input id="shareThis_13453846086" type="checkbox" /><label for="shareThis_13453846086">同时分享</label>
+        </span>
+        
+      </div>
+      <div class="action-r">
+        <a href="#nogo" onclick="return false;" class="submit submit-disabled">回复</a>
+        
+        <span class="count"><span class="inputed">0</span>/<span class="maxlength">140</span></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="get-params-for-ilike-531647656" style="display:none;">
+<div id="reply-params-13453846086" style="display:none;">
+{
+  "cid": "531647656",
+  "oid": "601040444",
+  "type": "album",
+  "typeNum": "2",
+  "rpLength": "0",
+  "userDigged":"",
+  "digged":"",
+  "stype":"709",
+  
+  "loadURI": "http://status.renren.com/feedcommentretrieve.do",
+  "sendURI": "http://status.renren.com/feedcommentreply.do?fin=&ft=album&ff_id=601040444",
+  "delURI": "http://status.renren.com/feedcommentdelete.do"
+  
+  
+  
+  
+  
+}
+</div>
+</div>
+
+</div>
+<div class="feed-toolbar feed-toolbar-new">
+	<menu type="toolbar">
+	    	
+		
+		
+		
+		
+	    
+	    
+
+		
+
+	</menu>
+</div>
+
+
+</article>
+
+
+
+<article class="a-feed" id="newsfeed-13452888943">
+<aside>
+
+<figure class="newsfeed-user"  noAvatar="" data-id="601040444" data-name="董成鹏"  create-time="" data-mark="" data-source="531633234" data-stype="709" data-fid="13452888943">
+	<a stats="NF_13452888943_709_601040444" href="http://www.renren.com/profile.do?id=601040444&amp;ref=minifeed&sfet=709&fin=15&fid=13452888943&ff_id=601040444" namecard="601040444" title="董成鹏" target="_blank">
+        
+        <img src="http://hdn.xnimg.cn/photos/hdn521/20111117/1105/h_tiny_aRFo_20a30007443a2f75.jpg" width="50" title="董成鹏" />
+
+</a>
+
+</figure>
+</aside>
+
+
+<h3>
+<a stats="NF_13452888943_709_601040444" href="http://www.renren.com/profile.do?id=601040444&ref=minifeed&sfet=709&fin=15&fid=13452888943&ff_id=601040444" namecard="601040444" target="_blank">董成鹏</a>
+
+
+
+上传了21张照片至
+<a stats="NF_13452888943_709_601040444" href="http://photo.renren.com/photo/601040444/album-531633234?ref=minifeed&sfet=709&fin=15&fid=13452888943&ff_id=601040444" target="_blank">各种鹏</a>
+</h3>
+<div id="moreThumbnails13452888943" class="content">
+
+<div class="photo-item">
+	<a stats="NF_13452888943_709_601040444" href="http://photo.renren.com/photo/601040444/photo-5257532772?ref=minifeed&sfet=709&fin=15&fid=13452888943&ff_id=601040444" target="_blank"><img width="100" src="http://fmn.rrimg.com/fmn059/20111117/1205/head_ba9h_05fc00011733121a.jpg" data-large="http://fmn.rrimg.com/fmn059/20111117/1205/large_ba9h_05fc00011733121a.jpg" class="photo"/></a>
+        
+</div>
+ 
+<div class="photo-item">
+	<a stats="NF_13452888943_709_601040444" href="http://photo.renren.com/photo/601040444/photo-5257532771?ref=minifeed&sfet=709&fin=15&fid=13452888943&ff_id=601040444" target="_blank"><img width="100" src="http://fmn.rrfmn.com/fmn058/20111117/1205/head_MDFk_7bdd000114171261.jpg" data-large="http://fmn.rrfmn.com/fmn058/20111117/1205/large_MDFk_7bdd000114171261.jpg" class="photo"/></a>
+        
+</div>
+ 
+<div class="photo-item">
+	<a stats="NF_13452888943_709_601040444" href="http://photo.renren.com/photo/601040444/photo-5257532770?ref=minifeed&sfet=709&fin=15&fid=13452888943&ff_id=601040444" target="_blank"><img width="100" src="http://fmn.rrimg.com/fmn062/20111117/1205/head_KC9a_6769000113631260.jpg" data-large="http://fmn.rrimg.com/fmn062/20111117/1205/large_KC9a_6769000113631260.jpg" class="photo"/></a>
+        
+</div>
+
+<a stats="NF_13452888943_709_601040444"  target="_blank" class="more" href="http://photo.renren.com/photo/601040444/album-531633234?ref=minifeed&sfet=709&fin=15&fid=13452888943&ff_id=601040444&from=feed">查看更多</a>
+</div>
+<div class="details ui-new">
+<div class="legend">
+<span class="duration">2011-11-17 12:07</span>
+	
+		<span class="from">
+			<a stats="NF___" href="http://jisu.renren.com/feedtail" target="_blank">通过人人极速相册发布</a>
+		</span>
+		
+	
+
+
+
+<a stats="NF_13452888943_709_601040444" href="#nogo"  id="ILike531633234" onclick="ILike_toggleUserLike('album','531633234','0','601040444','')" class="ilike_icon">赞</a>
+
+</div>
+
+<div class="feed-replies" id="feedbody13452888943" >
+  
+  
+  
+</div>
+
+<div class="feed-comment" >
+  <span class="avatar">
+    <img src="http://a.xnimg.cn/a.gif" />
+  </span>
+  <div class="comment-box">
+    <textarea data-fid="13452888943" autocomplete="off">评论...</textarea>
+    <div class="action">
+      <div class="action-l">
+        
+        <a href="#nogo" onclick="return false;" class="emotion">表情<span class="tip"><span class="arrow"></span>表情</span></a>
+        
+        
+        <a href="#nogo" onclick="return false;" class="mention">@<span class="tip"><span class="arrow"></span>点名</span></a>
+        
+        
+        <span class="share">
+          <input id="shareThis_13452888943" type="checkbox" /><label for="shareThis_13452888943">同时分享</label>
+        </span>
+        
+      </div>
+      <div class="action-r">
+        <a href="#nogo" onclick="return false;" class="submit submit-disabled">回复</a>
+        
+        <span class="count"><span class="inputed">0</span>/<span class="maxlength">140</span></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="get-params-for-ilike-531633234" style="display:none;">
+<div id="reply-params-13452888943" style="display:none;">
+{
+  "cid": "531633234",
+  "oid": "601040444",
+  "type": "album",
+  "typeNum": "2",
+  "rpLength": "0",
+  "userDigged":"",
+  "digged":"",
+  "stype":"709",
+  
+  "loadURI": "http://status.renren.com/feedcommentretrieve.do",
+  "sendURI": "http://status.renren.com/feedcommentreply.do?fin=&ft=album&ff_id=601040444",
+  "delURI": "http://status.renren.com/feedcommentdelete.do"
+  
+  
+  
+  
+  
+}
+</div>
+</div>
+
+</div>
+<div class="feed-toolbar feed-toolbar-new">
+	<menu type="toolbar">
+	    	
+		
+		
+		
+		
+	    
+	    
+
+		
+
+	</menu>
+</div>
+
+
+</article>
+
+
+
+<article class="a-feed a-n-feed" id="newsfeed-13452412429">
+<aside>
+	<figure class="newsfeed-user" data-id="601040444" data-name="董成鹏" >
+		<a stats="NF_13452412429_2006_601040444" href="http://page.renren.com/601040444?ref=minifeed&sfet=2006&fin=16&fid=13452412429&ff_id=601040444&feed=page_sharevideo&tagid=10021209538"  target="_blank">
+		<img width="50" src="http://hdn.xnimg.cn/photos/hdn521/20111117/1105/h_tiny_aRFo_20a30007443a2f75.jpg" /></a>
+	</figure>
+</aside>
+	<h3>
+		
+			<a stats="NF_13452412429_2006_601040444" target="_blank" href="http://page.renren.com/601040444?ref=minifeed&sfet=2006&fin=16&fid=13452412429&ff_id=601040444&feed=page_sharevideo&tagid=10021209538" >董成鹏</a>
+			
+		
+		
+		<!--  -->
+                &nbsp;<span class="action">分享了视频</span>
+	</h3>
+	<div class="content">
+		<div class="source">
+                        <div class="rich-content">
+                                <div class="content-media">
+					<a stats="NF_13452412429_2006_601040444" style="background-image: url(http://photocdn.sohu.com/20111117/vrsb378280.jpg);" href="http://page.renren.com/share/list?pid=601040444&ref=minifeed&sfet=2006&fin=16&fid=13452412429&ff_id=601040444&feed=page_sharevideo&share_id=10021209538#10021209538&statID=page_601040444_2&level=1" class="thumb" target="_blank"><span class="play-btn"></span></a>
+				</div>
+				<div class="content-main">
+					<p class="title"><a stats="NF_13452412429_2006_601040444" href="http://page.renren.com/share/list?pid=601040444&ref=minifeed&sfet=2006&fin=16&fid=13452412429&ff_id=601040444&feed=page_sharevideo&share_id=10021209538#10021209538&statID=page_601040444_2&level=1" target="_blank">大鹏嘚吧嘚399：makiyo胸袭《大鹏嘚吧嘚》 </a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="details ui-new">
+		<div class="legend">
+			<span class="duration">2011-11-17 11:38</span>
+				
+			
+			<a stats="NF_13452412429_2006_601040444" href="http://page.renren.com/share/list?pid=601040444&ref=minifeed&sfet=2006&fin=16&fid=13452412429&ff_id=601040444&feed=page_sharevideo&share_id=10021209538#10021209538&statID=page_601040444_2&level=1" target="_blank">评论该分享</a>
+		</div>
+	</div>
+	<div class="feed-toolbar feed-toolbar-new">
+		<menu type="toolbar">
+			
+	                
+	 		
+	   	
+	
+			
+	
+		</menu>
+	</div>
+	
+
+</article>
+
+
+
+<article class="a-feed a-n-feed" id="newsfeed-13452151930">
+<aside>
+
+	<figure class="newsfeed-user" data-id="601040444" data-name="董成鹏" >
+<a stats="NF_13452151930_2008_601040444" href="http://page.renren.com/601040444?ref=minifeed&sfet=2008&fin=17&fid=13452151930&ff_id=601040444&feed=page_status&tagid=2713022829"  target="_blank"><img width="50" src="http://hdn.xnimg.cn/photos/hdn521/20111117/1105/h_tiny_aRFo_20a30007443a2f75.jpg" /></a>
+	</figure>
+</aside>
+<h3><a stats="NF_13452151930_2008_601040444" href="http://page.renren.com/601040444?&ref=minifeed&sfet=2008&fin=17&fid=13452151930&ff_id=601040444&feed=page_status&tagid=2713022829"  target="_blank">董成鹏</a>
+
+: 大家好我是大鹏，关注我，请关注人人网
+</h3>
+<div class="details ui-new">
+<div class="legend">
+<span class="duration">2011-11-17 11:23</span>
+	
+
+
+
+<a stats="NF_13452151930_2008_601040444" href="#nogo" onclick="forwardDoing('2713022829', '601040444', 'page_601040444_2', '1');" class="share-forward">分享</a>
+
+
+</div>
+<div id="media2713022829"></div>
+
+<div class="ilike-body" id="feedbody2713022829">
+  <div class="min-cmtbox statustab">
+    <div class="mincmt-body">
+      <div class="mincmt-diggers statuscmtitem">
+        <p>
+          <a href="#nogo" onclick="ILike_toggleShow('page','2713022829', '0');return false;">
+            5个人觉得赞！
+          </a>
+        </p>
+        <ul id="diggers2713022829" class="digger"></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="feed-replies" id="feedbody13452151930" >
+  
+  
+  
+</div>
+
+<div class="feed-comment" >
+  <span class="avatar">
+    <img src="http://a.xnimg.cn/a.gif" />
+  </span>
+  <div class="comment-box">
+    <textarea data-fid="13452151930" autocomplete="off">评论...</textarea>
+    <div class="action">
+      <div class="action-l">
+        
+        
+        <a href="#nogo" onclick="return false;" class="mention">@<span class="tip"><span class="arrow"></span>点名</span></a>
+        
+        
+      </div>
+      <div class="action-r">
+        <a href="#nogo" onclick="return false;" class="submit submit-disabled">回复</a>
+        
+        <span class="count"><span class="inputed">0</span>/<span class="maxlength">140</span></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="get-params-for-ilike-2713022829" style="display:none;">
+<div id="reply-params-13452151930" style="display:none;">
+{
+  "cid": "2713022829",
+  "oid": "601040444",
+  "type": "page",
+  "typeNum": "3",
+  "rpLength": "0",
+  "userDigged":"",
+  "digged":"5",
+  "stype":"2008",
+  
+  
+  
+  
+  "loadURI": "http://page.renren.com/doing/replyList",
+  "sendURI": "http://page.renren.com/doing/reply",
+  "delURI": "http://page.renren.com/doing/delReply"
+  
+  
+}
+</div>
+</div>
+
+</div>
+<div class="feed-toolbar feed-toolbar-new">
+	<menu type="toolbar">
+		
+                
+ 		
+   	
+
+		
+
+	</menu>
+</div>
+
+
+</article>
+
+</div>
+<div class="feed-footer">
+<div class="feed-loading" style="display:none"><p>新鲜事读取中...</p></div>
+<div class="nomore-feed" style="display:none"><p>没有更多新鲜事了</p></div>
+<div class="more-feed"><a id="more-feed" href="#">更多新鲜事</a></div>
+<p class="mark-all-read" style="display:none"><a href="#">全部标记为已读</a></p>
+</div>
+</div>
+</div></div>
+</div></div><div class="col-right">
+<div class="mod fans">
+<div class="mod-header">
+<a class="more" href="/fanslist?pid=601040444" title="查看全部董成鹏的关注者">查看全部<img src="http://a.xnimg.cn/imgpro/bg/page-more.png" alt="董成鹏的关注者" title="董成鹏的关注者"/></a>
+<h4>关注者</h4>
+<a href="/fanslist?pid=601040444" rel="nofollow">(756)</a>
+</div>
+<div class="mod-body">
+<ul class="people-list">
+<li>
+<span class="headpichold">
+<a class="name" href="http://www.renren.com/profile.do?id=964456442&ref=page" rel="nofollow"><img src="http://hdn.xnimg.cn/photos/hdn221/20180303/1015/h_tiny_VysD_9702000be2d3195a.jpg" /></a>
+</span>
+<span class="name clearfix">
+<a class="name" href="http://www.renren.com/profile.do?id=964456442&ref=page" rel="nofollow">郑杰</a>
+</span>
+</li>
+<li>
+<span class="headpichold">
+<a class="name" href="http://www.renren.com/profile.do?id=886667334&ref=page" rel="nofollow"><img src="http://hdn.xnimg.cn/photos/hdn521/20160902/1930/h_tiny_9rvc_5e1700053bf5195a.jpg" /></a>
+</span>
+<span class="name clearfix">
+<a class="name" href="http://www.renren.com/profile.do?id=886667334&ref=page" rel="nofollow">淑丽℃</a>
+</span>
+</li>
+<li>
+<span class="headpichold">
+<a class="name" href="http://www.renren.com/profile.do?id=535643562&ref=page" rel="nofollow"><img src="http://hdn.xnimg.cn/photos/hdn221/20150721/1145/h_tiny_0M9G_51d70001ba771986.jpg" /></a>
+</span>
+<span class="name clearfix">
+<a class="name" href="http://www.renren.com/profile.do?id=535643562&ref=page" rel="nofollow">祖佳兴</a>
+</span>
+</li>
+<li>
+<span class="headpichold">
+<a class="name" href="http://www.renren.com/profile.do?id=353068169&ref=page" rel="nofollow"><img src="http://hdn.xnimg.cn/photos/hdn421/20170510/2120/h_tiny_qeCj_1a1700087b8c1986.jpg" /></a>
+</span>
+<span class="name clearfix">
+<a class="name" href="http://www.renren.com/profile.do?id=353068169&ref=page" rel="nofollow">聚幸福之美</a>
+</span>
+</li>
+<li>
+<span class="headpichold">
+<a class="name" href="http://www.renren.com/profile.do?id=584355700&ref=page" rel="nofollow"><img src="http://hdn.xnimg.cn/photos/hdn321/20170830/1845/h_tiny_t7i9_b0dc000a6cf7195a.jpg" /></a>
+</span>
+<span class="name clearfix">
+<a class="name" href="http://www.renren.com/profile.do?id=584355700&ref=page" rel="nofollow">張笑笑❤️</a>
+</span>
+</li>
+<li>
+<span class="headpichold">
+<a class="name" href="http://www.renren.com/profile.do?id=880548026&ref=page" rel="nofollow"><img src="http://hdn.xnimg.cn/photos/hdn421/20150709/0305/h_tiny_CJBS_51d7000194eb1986.jpg" /></a>
+</span>
+<span class="name clearfix">
+<a class="name" href="http://www.renren.com/profile.do?id=880548026&ref=page" rel="nofollow">张凯乐</a>
+</span>
+</li>
+<li>
+<span class="headpichold">
+<a class="name" href="http://www.renren.com/profile.do?id=374278939&ref=page" rel="nofollow"><img src="http://hdn.xnimg.cn/photos/hdn321/20150618/1105/h_tiny_5kte_7e70000019ee1986.jpg" /></a>
+</span>
+<span class="name clearfix">
+<a class="name" href="http://www.renren.com/profile.do?id=374278939&ref=page" rel="nofollow">李泳新</a>
+</span>
+</li>
+<li>
+<span class="headpichold">
+<a class="name" href="http://www.renren.com/profile.do?id=456006757&ref=page" rel="nofollow"><img src="http://hdn.xnimg.cn/photos/hdn521/20160306/1615/h_tiny_ocW0_96950004824d1986.jpg" /></a>
+</span>
+<span class="name clearfix">
+<a class="name" href="http://www.renren.com/profile.do?id=456006757&ref=page" rel="nofollow">穆利军~</a>
+</span>
+</li>
+<li>
+<span class="headpichold">
+<a class="name" href="http://www.renren.com/profile.do?id=877866237&ref=page" rel="nofollow"><img src="http://hdn.xnimg.cn/photos/hdn221/20160607/0135/h_tiny_2Gk3_b1150001f377195a.jpg" /></a>
+</span>
+<span class="name clearfix">
+<a class="name" href="http://www.renren.com/profile.do?id=877866237&ref=page" rel="nofollow">董昌龙</a>
+</span>
+</li>
+<li>
+<span class="headpichold">
+<a class="name" href="http://www.renren.com/profile.do?id=342708124&ref=page" rel="nofollow"><img src="http://hdn.xnimg.cn/photos/hdn221/20130620/1150/h_tiny_Hyzp_968000000215113e.jpg" /></a>
+</span>
+<span class="name clearfix">
+<a class="name" href="http://www.renren.com/profile.do?id=342708124&ref=page" rel="nofollow">张飛飛</a>
+</span>
+</li>
+<li>
+<span class="headpichold">
+<a class="name" href="http://www.renren.com/profile.do?id=879477210&ref=page" rel="nofollow"><img src="http://hdn.xnimg.cn/photos/hdn221/20150619/0955/h_tiny_uVGv_54000000e05c1986.jpg" /></a>
+</span>
+<span class="name clearfix">
+<a class="name" href="http://www.renren.com/profile.do?id=879477210&ref=page" rel="nofollow">赵毅</a>
+</span>
+</li>
+<li>
+<span class="headpichold">
+<a class="name" href="http://www.renren.com/profile.do?id=311231874&ref=page" rel="nofollow"><img src="http://hdn.xnimg.cn/photos/hdn521/20120526/2150/h_tiny_vjhD_38dc000002b91375.jpg" /></a>
+</span>
+<span class="name clearfix">
+<a class="name" href="http://www.renren.com/profile.do?id=311231874&ref=page" rel="nofollow">❤张彤.</a>
+</span>
+</li>
+<li>
+<span class="headpichold">
+<a class="name" href="http://www.renren.com/profile.do?id=878110981&ref=page" rel="nofollow"><img src="http://hdn.xnimg.cn/photos/hdn221/20150528/1125/h_tiny_CAMJ_ef10000029f5195a.jpg" /></a>
+</span>
+<span class="name clearfix">
+<a class="name" href="http://www.renren.com/profile.do?id=878110981&ref=page" rel="nofollow">王爽爽</a>
+</span>
+</li>
+<li>
+<span class="headpichold">
+<a class="name" href="http://www.renren.com/profile.do?id=245318228&ref=page" rel="nofollow"><img src="http://hdn.xnimg.cn/photos/hdn121/20151204/0145/h_tiny_bvES_01c80002b5bc1986.jpg" /></a>
+</span>
+<span class="name clearfix">
+<a class="name" href="http://www.renren.com/profile.do?id=245318228&ref=page" rel="nofollow">白音高娃</a>
+</span>
+</li>
+<li>
+<span class="headpichold">
+<a class="name" href="http://www.renren.com/profile.do?id=875082165&ref=page" rel="nofollow"><img src="http://hdn.xnimg.cn/photos/hdn121/20150503/1105/tiny_WctB_545f0003b6701986.jpg" /></a>
+</span>
+<span class="name clearfix">
+<a class="name" href="http://www.renren.com/profile.do?id=875082165&ref=page" rel="nofollow">张扬</a>
+</span>
+</li></ul>
+</div>
+</div>
+
+<div class="mod others">
+<div class="mod-header">
+<a class="more" href="/assemble/portal/1" title="查看全部人人网公共主页">查看全部<img src="http://a.xnimg.cn/imgpro/bg/page-more.png" alt="人人网公共主页" title="人人网公共主页"/></a>
+<h4>人人的用户还关注</h4>
+</div>
+<div class="mod-body">
+<ul class="people-list">
+<li>
+<span class="headpichold">
+<a href="/600002603?ref=promotelink">
+<img class="avatar" src="http://hdn.xnimg.cn/photos/hdn421/20151109/1910/h_tiny_v95i_ef1000021ce4195a.jpg" title="双鱼座的公共主页" alt="双鱼座的公共主页" />
+</a>
+</span>
+<span class="name clearfix">
+<a class="name" href="/600002603?ref=promote">双鱼座</a>
+</span>
+</li>
+<li>
+<span class="headpichold">
+<a href="/600002626?ref=promotelink">
+<img class="avatar" src="http://hdn.xnimg.cn/photos/hdn421/20140807/1125/h_tiny_EnuR_e10b0001b61a195a.jpg" title="梦想装修的公共主页" alt="梦想装修的公共主页" />
+</a>
+</span>
+<span class="name clearfix">
+<a class="name" href="/600002626?ref=promote">梦想装修</a>
+</span>
+</li>
+<li>
+<span class="headpichold">
+<a href="/601295627?ref=promotelink">
+<img class="avatar" src="http://hdn.xnimg.cn/photos/hdn121/20140625/1710/h_tiny_VrOC_a06e000036201986.jpg" title="动漫新资讯的公共主页" alt="动漫新资讯的公共主页" />
+</a>
+</span>
+<span class="name clearfix">
+<a class="name" href="/601295627?ref=promote">动漫新资讯</a>
+</span>
+</li>
+<li>
+<span class="headpichold">
+<a href="/601844759?ref=promotelink">
+<img class="avatar" src="http://hdn.xnimg.cn/photos/hdn121/20141209/1635/h_tiny_32Hy_3d560000e3481986.jpg" title="DreamBigCareer的公共主页" alt="DreamBigCareer的公共主页" />
+</a>
+</span>
+<span class="name clearfix">
+<a class="name" href="/601844759?ref=promote">DreamBigCareer</a>
+</span>
+</li>
+<li>
+<span class="headpichold">
+<a href="/601199226?ref=promotelink">
+<img class="avatar" src="http://hdn.xnimg.cn/photos/hdn521/20120125/1735/h_tiny_ygGl_7a8b000438982f75.jpg" title="行测每日一练的公共主页" alt="行测每日一练的公共主页" />
+</a>
+</span>
+<span class="name clearfix">
+<a class="name" href="/601199226?ref=promote">行测每日一练</a>
+</span>
+</li></ul>
+</div>
+</div>
+<div class="mod recent">
+<div class="mod-header">
+<h4>我最近浏览的公共主页</h4>
+</div>
+<div class="mod-body">
+<ul class="people-list">
+<li>
+<span class="headpichold">
+<a href="/601040444?ref=history">
+<img src="http://hdn.xnimg.cn/photos/hdn521/20111117/1105/h_tiny_aRFo_20a30007443a2f75.jpg" title="&#33891;&#25104;&#40527;的公共主页"  alt="&#33891;&#25104;&#40527;的公共主页" />
+</a>
+</span>
+<span class="name clearfix">
+<a href="/601040444?ref=history">&#33891;&#25104;&#40527;</a>
+</span>
+</li></ul>
+</div>
+</div> </div></div>
+</div>
+<script type="text/javascript" src="http://s.xnimg.cn/a2252/js/flash/music/swfobject.js"></script>
+<script type="text/javascript" src="http://s.xnimg.cn/a11680/js/flash/music/musicplayerv2.js"></script>
+<!--
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F7b9755874d74f74c2968559e9422e9d3' type='text/javascript'%3E%3C/script%3E"));
+</script>
+-->
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?46c4c9a199480813b7aa894c40e6df70";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<!-- 百度自动推送 -->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</div>
+</div>
+</div><div class="ft-wrapper clearfix">
+<p>
+<strong>玩转人人</strong>
+<a href="http://page.renren.com/register/regGuide/" target="_blank">公共主页</a>
+<a href="http://public.renren.com/" target="_blank">公众平台</a>
+<a href="http://support.renren.com/helpcenter" target="_blank">客服帮助</a>
+<a href="http://www.renren.com/siteinfo/privacy" target="_blank">隐私</a>
+</p>
+<p>
+<strong>商务合作</strong>
+<a href="http://page.renren.com/marketing/index" target="_blank">品牌营销</a>
+<a href="http://bolt.jebe.renren.com/introduce.htm" class="l-2" target="_blank">中小企业<br />自助广告</a>
+<a href="http://dev.renren.com/" target="_blank">开放平台</a>
+</p>
+<p>
+<strong>公司信息</strong>
+<a href="http://www.renren-inc.com/zh/product/renren.html" target="_blank">关于我们</a>
+<a href="http://page.renren.com/gongyi" target="_blank">人人公益</a>
+<a href="http://www.renren-inc.com/zh/hr/" target="_blank">招聘</a>
+</p>
+<p>
+<strong>友情链接</strong>
+<a href="http://www.jingwei.com/" target="_blank">经纬网</a>
+<a href="http://wan.renren.com/" target="_blank">人人游戏</a>
+<a href="http://fenqi.renren.com/" target="_blank">人人分期</a>
+</p>
+<p>
+<strong>人人移动客户端下载</strong>
+<a href="http://mobile.renren.com/showClient?v=platform_rr&psf=42064" target="_blank">iPhone/Android</a>
+<a href="http://mobile.renren.com/showClient?v=platform_hd&psf=42067" target="_blank">iPad客户端</a>
+<a href="http://mobile.renren.com" target="_blank">其他人人产品</a>
+</p>
+<!--<p class="copyright-info">-->
+<!-- 临时添加公司信息用 -->
+<p class="copyright-info" style="margi-left: -20px">
+<span>公司全称：北京千橡网景科技发展有限公司</span>
+<span>公司电话：010-84481818</span>
+<span>公司地址：北京市朝阳区酒仙桥中路18号<br>国投创意信息产业园北楼1层</span>
+<span><img id="wenhuajingying_icon" style="height: 28px;float: left; margin-left: 60px;" src="http://s.xnimg.cn/imgpro/civilization/wenhuajingying.png"/><a href="http://sq.ccm.gov.cn/ccnt/sczr/service/business/emark/toDetail/DFB957BAEB8B417882539C9B9F9547E6" target="_blank">京网文[2013]0136-030号</a></span>
+<span><a href="http://www.miibeian.gov.cn/" target="_blank">京ICP证090254号</a></span>
+<span>人人网&copy;2015</span>
+<span><a href="#nogo" id="lawInfo">法律声明</a></span>
+</p>
+
+<!-- dj埋码 -->
+<script type="text/javascript">
+function sendStats(url){var n="log_"+(new Date).getTime();var c=window[n]=new Image;c.onload=c.onerror=function(){window[n]=null};c.src=url;c=null}
+function goPAGE() {
+    var currentUrl = window.location.href.split('#')[0];
+if ((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+    return "wap";
+}
+else {
+     return "pc";
+ }
+}
+var judge = goPAGE();
+    (function(){
+        sendStats('http://dj.renren.com/seostat?j={"from":"'+window.location.hostname+'","dev":"'+judge+'","page":"'+encodeURIComponent(window.location.href)+'"}');
+        console.log('dj!!');
+    })();
+</script>
+
+
+</div>	
+</div>			</div>
+</div>	
+</div>
+</body>
+</html>
